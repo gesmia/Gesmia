@@ -1,0 +1,70 @@
+.commentBox {
+    display: flex;
+    padding: 18.737px 16.395px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    border-radius: 7.026px;
+    border: 1px solid #141414;
+    background: #1E1E1E;
+
+    text-align: left;
+    max-width: 300px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.commentBox .comment {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+.commentBox .comment h4 {
+    color: var(--White-Doddle, rgba(255, 255, 255, 0.90));
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.commentBox .comment p {
+    color: var(--White-Doddle, rgba(255, 255, 255, 0.742));
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.141px;
+}
+
+.commentBox .comment label {
+    color: rgba(255, 255, 255, 0.361);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.117px;
+}
+
+@media (max-width: 768px) {
+    .commentBox {
+        padding: 16px;
+        width: 80%;
+        max-width: none;
+    }
+
+    .commentBox .comment h4,
+    .commentBox .comment p,
+    .commentBox .comment label {
+        font-size: 14px;
+    }
+
+    .commentBox .comment p {
+        line-height: 20px;
+    }
+
+    .commentBox .comment label {
+        font-size: 10px;
+    }
+}

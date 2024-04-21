@@ -1,0 +1,79 @@
+.footer {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 34px 14px 34px;
+  background-color: rgb(32, 32, 32);
+}
+.footer .by {
+  display: flex;
+  color: white;
+  align-items: center;
+  gap: 8px;
+}
+.footer svg {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer h1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  margin: 6px 0 6px 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer button + button {
+  margin-left: 10px;
+}
+
+.footer .welcome {
+  color: #333;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 14px 6px 14px 6px;
+    display: flex;
+    gap: 6px;
+  }
+
+  .footer svg {
+    width: 100px;
+  }
+  
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .footer .by {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer h1 {
+    font-size: 16px;
+    margin: 4px 0;
+  }
+
+  .footer .welcome {
+    font-size: 12px;
+    margin-right: 0;
+  }
+
+  .footer button {
+    display: none;
+  }
+}
