@@ -70,26 +70,39 @@ const prices = [
   }
 ];
 
-
 export default function Home() {
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    // Set initial width if window is defined (client-side)
+    if (typeof window !== 'undefined') {
+      setWindowWidth(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+    }
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+      }
+    };
   }, []);
+
+  if (windowWidth === null) {
+    // Return loading state or something else until windowWidth is set
+    return <div>Loading...</div>;
+  }
 
   const isMobile = windowWidth <= 768;
 
   const image1 = isMobile ? imageM_step_one : image_step_one;
   const image2 = isMobile ? imageM_step_two : image_step_two;
   const image3 = isMobile ? imageM_step_three : image_step_three;
+
   return (
     <>
       {/* header */}
