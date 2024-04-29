@@ -30,16 +30,16 @@ const clients = [
 ]
 
 const comments = [
-  { id: 5, name: 'Camila', text: 'Estoy emocionada por probar EmergentApp para sentirme más segura en mi ciudad.', date: 'Mayo 1' },
-  { id: 6, name: 'Andrés', text: 'Como padre, la seguridad de mis hijos es lo más importante. Ansío la llegada de esta app.', date: 'Julio 1' },
-  { id: 7, name: 'Sofía', text: 'Vivo sola y a menudo vuelvo tarde del trabajo. EmergentApp suena como la solución perfecta.', date: 'Diciembre 1' },
-  { id: 8, name: 'Juan', text: 'Espero que EmergentApp me ofrezca la tranquilidad que necesito cuando estoy fuera de casa.', date: 'Julio 1' },
-  { id: 9, name: 'Luisa', text: 'Estoy interesada en las funciones de geolocalización de EmergentApp. ¡No puedo esperar para usarla!', date: 'Mayo 2' },
-  { id: 10, name: 'Carlos', text: 'La seguridad es una prioridad para mí cuando viajo por trabajo. EmergentApp podría ser de gran ayuda.', date: 'Agosto 2' },
-  { id: 11, name: 'Elena', text: 'Me gusta la idea de una app que me ayude a sentirme segura en cualquier lugar.', date: 'Agosto 3' },
-  { id: 12, name: 'Tomás', text: 'Esperando ansiosamente la beta de EmergentApp para probar sus características de seguridad.', date: 'Enero 3' },
-  { id: 13, name: 'Mariana', text: 'Siento que esta app podría cambiar la forma en que manejo mi seguridad personal diariamente.', date: 'Mayo 4' },
-  { id: 14, name: 'Roberto', text: 'Como ciclista, necesito una solución que me proteja en las calles. EmergentApp suena prometedora.', date: 'Marzo 4' }
+  { id: 5, name: 'Camila', text: 'Estoy emocionada por probar EmergentApp para sentirme más segura en mi ciudad.', date: 'Mayo' },
+  { id: 6, name: 'Andrés', text: 'Como padre, la seguridad de mis hijos es lo más importante. Ansío la llegada de esta app.', date: 'Julio'},
+  { id: 7, name: 'Sofía', text: 'Vivo sola y a menudo vuelvo tarde del trabajo. EmergentApp suena como la solución perfecta.', date: 'Diciembre'},
+  { id: 8, name: 'Juan', text: 'Espero que EmergentApp me ofrezca la tranquilidad que necesito cuando estoy fuera de casa.', date: 'Julio' },
+  { id: 9, name: 'Luisa', text: 'Estoy interesada en las funciones de geolocalización de EmergentApp. ¡No puedo esperar para usarla!', date: 'Mayo' },
+  { id: 10, name: 'Carlos', text: 'La seguridad es una prioridad para mí cuando viajo por trabajo. EmergentApp podría ser de gran ayuda.', date: 'Agosto' },
+  { id: 11, name: 'Elena', text: 'Me gusta la idea de una app que me ayude a sentirme segura en cualquier lugar.', date: 'Agosto' },
+  { id: 12, name: 'Tomás', text: 'Esperando ansiosamente la beta de EmergentApp para probar sus características de seguridad.', date: 'Enero' },
+  { id: 13, name: 'Mariana', text: 'Siento que esta app podría cambiar la forma en que manejo mi seguridad personal diariamente.', date: 'Mayo' },
+  { id: 14, name: 'Roberto', text: 'Como ciclista, necesito una solución que me proteja en las calles. EmergentApp suena prometedora.', date: 'Marzo' }
 ];
 
 const features = [
