@@ -93,8 +93,7 @@ export default function Home() {
   }, []);
 
   if (windowWidth === null) {
-    // Return loading state or something else until windowWidth is set
-    return <div>Loading...</div>;
+    return <div> </div>;
   }
 
   const isMobile = windowWidth <= 768;

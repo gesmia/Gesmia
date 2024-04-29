@@ -1,5 +1,6 @@
 import React from 'react';
 import './button.css';
+import Link from 'next/link';
 
 interface ButtonProps {
   /**
@@ -36,17 +37,17 @@ export const Button = ({
 }: ButtonProps) => {
   const mode = primary ? 'button--primary' : 'button--secondary';
   return (
-    <button
+    <Link
+      href={'https://airtable.com/appFPGgY8oLmFyDL1/pagLojfGYRMV4hHM9/form'} 
       type="button"
       className={['button', `button--${size}`, mode].join(' ')}
-      {...props}
-    >
+      {...props}    >
       {label}
       <style jsx>{`
         button {
           background-color: ${backgroundColor};
         }
       `}</style>
-    </button>
+    </Link>
   );
 };

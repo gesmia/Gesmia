@@ -35,3 +35,17 @@
   font-size: 16px;
   padding: 12px 24px;
 }
+
+.button {
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+  text-align: center;
+}
+
+Link {
+  cursor: pointer;
+
+}
+
