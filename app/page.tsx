@@ -30,11 +30,18 @@ const clients = [
 ]
 
 const comments = [
-  { id: 1, name: 'Catalina', text: 'Una app que me mantiene más segura a mi y a mi hija', date: 'Abril 15' },
-  { id: 2, name: 'Matthew', text: 'Una app que me mantiene más segura a mi y a mi hija', date: 'Abril 15' },
-  { id: 3, name: 'Yordan', text: 'Una app que me mantiene más segura a mi y a mi hija', date: 'Abril 15' },
-  { id: 4, name: 'Joshua', text: 'Una app que me mantiene más segura a mi y a mi hija', date: 'Abril 15' },
+  { id: 5, name: 'Camila', text: 'Estoy emocionada por probar EmergentApp para sentirme más segura en mi ciudad.', date: 'Mayo 1' },
+  { id: 6, name: 'Andrés', text: 'Como padre, la seguridad de mis hijos es lo más importante. Ansío la llegada de esta app.', date: 'Julio 1' },
+  { id: 7, name: 'Sofía', text: 'Vivo sola y a menudo vuelvo tarde del trabajo. EmergentApp suena como la solución perfecta.', date: 'Diciembre 1' },
+  { id: 8, name: 'Juan', text: 'Espero que EmergentApp me ofrezca la tranquilidad que necesito cuando estoy fuera de casa.', date: 'Julio 1' },
+  { id: 9, name: 'Luisa', text: 'Estoy interesada en las funciones de geolocalización de EmergentApp. ¡No puedo esperar para usarla!', date: 'Mayo 2' },
+  { id: 10, name: 'Carlos', text: 'La seguridad es una prioridad para mí cuando viajo por trabajo. EmergentApp podría ser de gran ayuda.', date: 'Agosto 2' },
+  { id: 11, name: 'Elena', text: 'Me gusta la idea de una app que me ayude a sentirme segura en cualquier lugar.', date: 'Agosto 3' },
+  { id: 12, name: 'Tomás', text: 'Esperando ansiosamente la beta de EmergentApp para probar sus características de seguridad.', date: 'Enero 3' },
+  { id: 13, name: 'Mariana', text: 'Siento que esta app podría cambiar la forma en que manejo mi seguridad personal diariamente.', date: 'Mayo 4' },
+  { id: 14, name: 'Roberto', text: 'Como ciclista, necesito una solución que me proteja en las calles. EmergentApp suena prometedora.', date: 'Marzo 4' }
 ];
+
 const features = [
   { number: 1, title: 'Diseño Innovador', description: 'Nuestra aplicación combina tecnología de vanguardia con un diseño intuitivo, asegurando que la seguridad personal nunca sea complicada.' },
   { number: 2, title: 'Rápido y Eficaz', description: 'Recibe y envía alertas de emergencia con la rapidez que solo nuestra tecnología te puede ofrecer.' },
@@ -93,7 +100,8 @@ export default function Home() {
   }, []);
 
   if (windowWidth === null) {
-    return <div> </div>;
+    // Return loading state or something else until windowWidth is set
+    return <div>Loading...</div>;
   }
 
   const isMobile = windowWidth <= 768;
@@ -188,7 +196,7 @@ export default function Home() {
         {/* image and descriptions */}
         <section className="imageAndContent">
           <InformationWithContent type={1} title={"Toda tu familia siempre presente"} description={"Mantén a tu familia conectada y segura en todo momento con EmergentApp, que utiliza tecnología de vanguardia para ofrecer localización en tiempo real y comunicación directa en situaciones de emergencia."} label={"Get the App"}>
-            <VideoEmbed url={"/videos/contentmp4.mp4"} height={"100%"} />
+              <VideoEmbed url={"/videos/contentmp4.mp4"} height={"100%"} />
           </InformationWithContent>
 
           <InformationWithContent type={2} title={"Comentarios de personas que usan EmergentApp"} description={"Explora el entusiasmo y las expectativas de futuros usuarios que están listos para adoptar EmergentApp como su solución de seguridad personal, destacando su potencial para mejorar la tranquilidad y la seguridad diaria."} label={"Leer más"}>

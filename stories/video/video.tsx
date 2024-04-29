@@ -23,6 +23,7 @@ export const VideoEmbed = ({ url, height }: VideoEmbedProps) => {
                     height={height}
                     muted={true}
                     width='100%'
+                    playsinline
                 />
             )}
         </>
