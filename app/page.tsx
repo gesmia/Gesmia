@@ -51,28 +51,28 @@ const features = [
 const prices = [
   {
     type: "standard",
-    value: 3.99,
-    label: "For Individual / mes",
+    value: 0,
+    label: "GRATIS",
     buttonLabel: "Unirme",
     items: [
       "Solo un usuario",
-      "Alerta de Emergencia via SMS",
-      "Botón de Pánico Silencioso",
-      "Acceso a Líneas de Asistencia",
-      "Historial de Ubicaciones"
+      "Mapa con zonas riesgosas",
+      "Alerta de Emergencia a contactos",
+      "Historial de Ubicaciones",
+      "SOS silencioso"
     ]
   },
   {
     type: "family",
-    value: 16.99,
-    label: "For families / mes",
+    value: 10.99,
+    label: "Por cada 5 usuarios / mes",
     buttonLabel: "Unirme",
     items: [
-      "Hasta 10 usuarios",
+      "Sin limite de usuarios",
       "Todo lo del plan individual",
-      "Alertas de Zonas Inseguras",
-      "Control Parental",
-      "Monitero de varios usuarios"
+      "Creación de circulos de usuarios",
+      "Conexión con Thapp",
+      "Monitero de usuarios y alertas"
     ]
   }
 ];
