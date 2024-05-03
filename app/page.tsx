@@ -30,16 +30,16 @@ const clients = [
 ]
 
 const comments = [
-  { id: 5, name: 'Camila', text: 'Estoy emocionada por probar EmergentApp para sentirme más segura en mi ciudad.', date: 'Mayo' },
+  { id: 5, name: 'Camila', text: 'Estoy emocionada por probar Thappie para sentirme más segura en mi ciudad.', date: 'Mayo' },
   { id: 6, name: 'Andrés', text: 'Como padre, la seguridad de mis hijos es lo más importante. Ansío la llegada de esta app.', date: 'Julio'},
-  { id: 7, name: 'Sofía', text: 'Vivo sola y a menudo vuelvo tarde del trabajo. EmergentApp suena como la solución perfecta.', date: 'Diciembre'},
-  { id: 8, name: 'Juan', text: 'Espero que EmergentApp me ofrezca la tranquilidad que necesito cuando estoy fuera de casa.', date: 'Julio' },
-  { id: 9, name: 'Luisa', text: 'Estoy interesada en las funciones de geolocalización de EmergentApp. ¡No puedo esperar para usarla!', date: 'Mayo' },
-  { id: 10, name: 'Carlos', text: 'La seguridad es una prioridad para mí cuando viajo por trabajo. EmergentApp podría ser de gran ayuda.', date: 'Agosto' },
+  { id: 7, name: 'Sofía', text: 'Vivo sola y a menudo vuelvo tarde del trabajo. Thappie suena como la solución perfecta.', date: 'Diciembre'},
+  { id: 8, name: 'Juan', text: 'Espero que Thappie me ofrezca la tranquilidad que necesito cuando estoy fuera de casa.', date: 'Julio' },
+  { id: 9, name: 'Luisa', text: 'Estoy interesada en las funciones de geolocalización de Thappie. ¡No puedo esperar para usarla!', date: 'Mayo' },
+  { id: 10, name: 'Carlos', text: 'La seguridad es una prioridad para mí cuando viajo por trabajo. Thappie podría ser de gran ayuda.', date: 'Agosto' },
   { id: 11, name: 'Elena', text: 'Me gusta la idea de una app que me ayude a sentirme segura en cualquier lugar.', date: 'Agosto' },
-  { id: 12, name: 'Tomás', text: 'Esperando ansiosamente la beta de EmergentApp para probar sus características de seguridad.', date: 'Enero' },
+  { id: 12, name: 'Tomás', text: 'Esperando ansiosamente la beta de Thappie para probar sus características de seguridad.', date: 'Enero' },
   { id: 13, name: 'Mariana', text: 'Siento que esta app podría cambiar la forma en que manejo mi seguridad personal diariamente.', date: 'Mayo' },
-  { id: 14, name: 'Roberto', text: 'Como ciclista, necesito una solución que me proteja en las calles. EmergentApp suena prometedora.', date: 'Marzo' }
+  { id: 14, name: 'Roberto', text: 'Como ciclista, necesito una solución que me proteja en las calles. Thappie suena prometedora.', date: 'Marzo' }
 ];
 
 const features = [
@@ -195,11 +195,11 @@ export default function Home() {
 
         {/* image and descriptions */}
         <section className="imageAndContent">
-          <InformationWithContent type={1} title={"Toda tu familia siempre presente"} description={"Mantén a tu familia conectada y segura en todo momento con EmergentApp, que utiliza tecnología de vanguardia para ofrecer localización en tiempo real y comunicación directa en situaciones de emergencia."} label={"Get the App"}>
+          <InformationWithContent type={1} title={"Toda tu familia siempre presente"} description={"Mantén a tu familia conectada y segura en todo momento con Thappie, que utiliza tecnología de vanguardia para ofrecer localización en tiempo real y comunicación directa en situaciones de emergencia."} label={"Get the App"}>
               <VideoEmbed url={"/videos/contentmp4.mp4"} height={"100%"} />
           </InformationWithContent>
 
-          <InformationWithContent type={2} title={"Comentarios de personas que usan EmergentApp"} description={"Explora el entusiasmo y las expectativas de futuros usuarios que están listos para adoptar EmergentApp como su solución de seguridad personal, destacando su potencial para mejorar la tranquilidad y la seguridad diaria."} label={"Leer más"}>
+          <InformationWithContent type={2} title={"Comentarios de personas que usan Thappie"} description={"Explora el entusiasmo y las expectativas de futuros usuarios que están listos para adoptar Thappie como su solución de seguridad personal, destacando su potencial para mejorar la tranquilidad y la seguridad diaria."} label={"Leer más"}>
             <div className="comments-animation">
               <div className="comments-animation-inner">
                 {comments.map(comment => (
@@ -217,7 +217,7 @@ export default function Home() {
         {/* prices */}
         <section className="pricesBox">
           <h4>Rediseña tu sentido de seguridad</h4>
-          <label className="subtitle">Descubre cómo EmergentApp puede hacer que tú y tus seres queridos vivan más tranquilos.</label>
+          <label className="subtitle">Descubre cómo Thappie puede hacer que tú y tus seres queridos vivan más tranquilos.</label>
 
           <div className="prices">
 
