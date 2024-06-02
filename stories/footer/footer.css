@@ -77,3 +77,8 @@
     display: none;
   }
 }
+
+.contact {
+  color: white;
+  text-decoration: underline;
+}
