@@ -33,11 +33,11 @@ export const comments = [
     },
     {
       type: "family",
-      value: 16.99,
+      value: 24.99,
       label: "",
       buttonLabel: "Unirme",
       items: [
-        "Conecta con hasta 6 usuarios",
+        "Conecta con hasta 10 usuarios",
         "Todo lo del plan individual",
         "Creación de circulos de usuarios",
         "Conexión con Thapp",
