@@ -1,9 +1,12 @@
 'use client'
+import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import './page.css'
 
-import { InformationWithContent } from '@/stories/informationWithContent/InformationWithContent'
-import { Feauture } from "@/stories/feature/feature";
-import { Comment } from "@/stories/comment/Comment";
-
+import pattern from '@/public/head/Pattern.png'
+import location_view from '@/public/head/location_view.png'
+import incident_view from '@/public/head/incident_view.png'
+import report_view from '@/public/head/report_view.png'
 import image_step_one from '@/public/steps/image-one.svg'
 import image_step_two from '@/public/steps/image-two.svg'
 import image_step_three from '@/public/steps/image-three.svg'
@@ -14,68 +17,17 @@ import imageM_step_three from '@/public/steps/IMG3m.svg'
 
 import tapp_device from '@/public/device/image_tapp.png'
 import tappCollar from '@/public/head/tapp_collar.jpg'
+
+import { InformationWithContent } from '@/stories/informationWithContent/InformationWithContent'
+import { Feauture } from "@/stories/feature/feature";
+import { Comment } from "@/stories/comment/Comment";
 import { VideoEmbed } from "@/stories/video/video";
-import React, { useEffect, useRef, useState } from "react";
 import { Header } from "@/stories/header/Header";
 import { Button } from "@/stories/button/Button";
 import { Footer } from "@/stories/footer/Footer";
-import pattern from '@/public/head/Pattern.png'
 import { Price } from "@/stories/prices/Price";
-import Image from "next/image";
-import './page.css'
 
-const clients = [
-  'catita',
-  'matthew'
-]
-
-const comments = [
-  { id: 5, name: 'Camila', text: 'Estoy emocionada por probar Thappie para sentirme más segura en mi ciudad.', date: 'Mayo' },
-  { id: 6, name: 'Andrés', text: 'Como padre, la seguridad de mis hijos es lo más importante. Ansío la llegada de esta app.', date: 'Julio'},
-  { id: 7, name: 'Sofía', text: 'Vivo sola y a menudo vuelvo tarde del trabajo. Thappie suena como la solución perfecta.', date: 'Diciembre'},
-  { id: 8, name: 'Juan', text: 'Espero que Thappie me ofrezca la tranquilidad que necesito cuando estoy fuera de casa.', date: 'Julio' },
-  { id: 9, name: 'Luisa', text: 'Estoy interesada en las funciones de geolocalización de Thappie. ¡No puedo esperar para usarla!', date: 'Mayo' },
-  { id: 10, name: 'Carlos', text: 'La seguridad es una prioridad para mí cuando viajo por trabajo. Thappie podría ser de gran ayuda.', date: 'Agosto' },
-  { id: 11, name: 'Elena', text: 'Me gusta la idea de una app que me ayude a sentirme segura en cualquier lugar.', date: 'Agosto' },
-  { id: 12, name: 'Tomás', text: 'Esperando ansiosamente la beta de Thappie para probar sus características de seguridad.', date: 'Enero' },
-  { id: 13, name: 'Mariana', text: 'Siento que esta app podría cambiar la forma en que manejo mi seguridad personal diariamente.', date: 'Mayo' },
-  { id: 14, name: 'Roberto', text: 'Como ciclista, necesito una solución que me proteja en las calles. Thappie suena prometedora.', date: 'Marzo' }
-];
-
-const features = [
-  { number: 1, title: 'Diseño Innovador', description: 'Nuestra aplicación combina tecnología de vanguardia con un diseño intuitivo, asegurando que la seguridad personal nunca sea complicada.' },
-  { number: 2, title: 'Rápido y Eficaz', description: 'Recibe y envía alertas de emergencia con la rapidez que solo nuestra tecnología te puede ofrecer.' },
-  { number: 3, title: 'Tu Familia, Siempre Contigo', description: 'Nuestra aplicación mantiene a tu familia unida y segura, sin importar dónde estén.' },
-];
-
-const prices = [
-  {
-    type: "standard",
-    value: 0,
-    label: "GRATIS",
-    buttonLabel: "Unirme",
-    items: [
-      "Solo un usuario",
-      "Mapa con zonas riesgosas",
-      "Alerta de Emergencia a contactos",
-      "Historial de Ubicaciones",
-      "SOS silencioso"
-    ]
-  },
-  {
-    type: "family",
-    value: 10.99,
-    label: "Por cada 5 usuarios / mes",
-    buttonLabel: "Unirme",
-    items: [
-      "Sin limite de usuarios",
-      "Todo lo del plan individual",
-      "Creación de circulos de usuarios",
-      "Conexión con Thapp",
-      "Monitero de usuarios y alertas"
-    ]
-  }
-];
+import { comments, features, prices } from './data'
 
 export default function Home() {
 
@@ -86,7 +38,6 @@ export default function Home() {
       setWindowWidth(window.innerWidth);
     };
 
-    // Set initial width if window is defined (client-side)
     if (typeof window !== 'undefined') {
       setWindowWidth(window.innerWidth);
       window.addEventListener('resize', handleResize);
@@ -127,8 +78,9 @@ export default function Home() {
 
           <div className="content">
             <div className="app">
-              <div>
-                <VideoEmbed url={"/videos/headmp4.mp4"} height={"400px"} />
+              <div className="views">
+                <Image src={location_view} alt={"location view mobile app"} className="view" />
+                <Image src={report_view} alt={"location view mobile app"} className="view" />
               </div>
             </div>
             <div className="tapp">
@@ -194,11 +146,11 @@ export default function Home() {
 
         {/* image and descriptions */}
         <section className="imageAndContent">
-          <InformationWithContent type={1} title={"Toda tu familia siempre presente"} description={"Mantén a tu familia conectada y segura en todo momento con Thappie, que utiliza tecnología de vanguardia para ofrecer localización en tiempo real y comunicación directa en situaciones de emergencia."} label={"Get the App"}>
-              <VideoEmbed url={"/videos/contentmp4.mp4"} height={"100%"} />
+          <InformationWithContent type={1} title={"Todo tu circulo siempre presente"} description={"No importa si eres un viajero, los usuarios de Thappie siempre pueden reportar incidentes, ayudandonos a mantener a tu familia segura. Notificando en cada lugar donde están tus familiares o amigos"} label={"Unirme"}>
+            <Image src={incident_view} alt={"location view mobile app"} className="function" />
           </InformationWithContent>
 
-          <InformationWithContent type={2} title={"Comentarios de personas que usan Thappie"} description={"Explora el entusiasmo y las expectativas de futuros usuarios que están listos para adoptar Thappie como su solución de seguridad personal, destacando su potencial para mejorar la tranquilidad y la seguridad diaria."} label={"Leer más"}>
+          <InformationWithContent type={2} title={"Comentarios de personas que usan Thappie"} description={"Explora el entusiasmo y las expectativas de futuros usuarios que están listos para adoptar Thappie como su solución de seguridad personal, destacando su potencial para mejorar la tranquilidad y la seguridad diaria."} label={"Unirme"}>
             <div className="comments-animation">
               <div className="comments-animation-inner">
                 {comments.map(comment => (

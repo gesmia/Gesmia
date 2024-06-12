@@ -96,7 +96,38 @@ html {
     display: block;
 }
 
+.function {
+    height: 500px;
+    width: auto;
+    top: 60px;
+    position: relative;
+}
+
+.view{
+    height: 600px;
+    width: auto;
+}
+
+.views {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+
 /* mobile */
+
+@media (max-width: 768px) {
+    .view {
+        height: 50vh; /* Ajustar la altura para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .view {
+        height: 40vh; /* Ajustar la altura para pantallas aún más pequeñas */
+    }
+}
 
 @media (max-width: 1024px) {
     .head .title {
