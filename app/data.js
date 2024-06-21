@@ -21,7 +21,7 @@ export const comments = [
     {
       type: "standard",
       value: 0,
-      label: "",
+      label: "Primeros usuarios",
       buttonLabel: "Unirme",
       items: [
         "Conecta hasta con 2 usuarios",
@@ -33,8 +33,8 @@ export const comments = [
     },
     {
       type: "family",
-      value: 24.99,
-      label: "",
+      value: 9.99,
+      label: "2.29 por cada extra",
       buttonLabel: "Unirme",
       items: [
         "Conecta con hasta 10 usuarios",

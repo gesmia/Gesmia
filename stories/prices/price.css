@@ -33,12 +33,10 @@
 }
 
 .priceBox .value label {
-    color: #A4A4A4;
-    font-size: 14px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    /* 142.857% */
     letter-spacing: -0.084px;
     margin-bottom: 22px;
 }
@@ -67,8 +65,7 @@
 
 
 .pricesBox label {
-    color: var(--primary-color);
-    opacity: 40%;
+    color: #858585;
     margin-bottom: 28px;
     text-align: center;
     font-size: 17px;
@@ -100,7 +97,6 @@
     font-size: 42px;
     font-style: normal;
     font-weight: 700;
-    /* 100.629% */
     letter-spacing: -2px;
 }
 

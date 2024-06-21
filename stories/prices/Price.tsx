@@ -13,8 +13,8 @@ export const Price = ({ type, value, label, buttonLabel, items }: PriceProps) =>
     <div className="priceBox">
         <div className="value">
             <span>{type}</span>
-            <h3>${value}</h3>
-            <label htmlFor="">{label}</label>
+            <h3>${value} / mes</h3>
+            <label className="label">{label}</label>
             <Button label={buttonLabel} />
         </div>
 
