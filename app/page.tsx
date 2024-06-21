@@ -3,6 +3,9 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import './page.css'
 
+import BrevoScript from '../stories/Brevo/brevo';
+
+
 import pattern from '@/public/head/Pattern.png'
 import location_view from '@/public/head/location_view.png'
 import incident_view from '@/public/head/incident_view.png'
@@ -62,6 +65,8 @@ export default function Home() {
 
   return (
     <>
+
+      <BrevoScript />
       {/* header */}
 
       <Header />
