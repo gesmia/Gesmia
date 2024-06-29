@@ -3,12 +3,15 @@
 import { cardFormaters, phoneFormater } from './lib/formaters';
 import { cardValidators, emailErrors, phoneErrors } from './lib/validators';
 import { Input, useInputState } from '../../../stories/input/Input';
+import { Button } from '../../../stories/button/Button';
 import { CardProvider } from './lib/card-providers';
-import { useEffect, useState } from 'react';
-import { objMap } from '../(lib)/utils';
+import { useEffect, useRef, useState } from 'react';
+import { getRandomNumber, objMap } from '../(lib)/utils';
 
 import PhoneInput from 'react-phone-input-2';
 import './cardForm.css';
+import { createRegisterTry } from '@/firebase/actions/create-register-try';
+import Modal from './Modal';
 
 interface CardFormProps {
   onChange?: (value: object) => void;
@@ -17,13 +20,15 @@ export default function CardForm({ onChange }: CardFormProps) {
   const [cardProvider, setCardProvider] = useState<CardProvider | null>(null);
   const phone = useInputState('+', phoneFormater, phoneErrors);
   const email = useInputState('', null, emailErrors);
-
   const card = {
     holder: useInputState('', null, cardValidators.holderErrors),
     number: useInputState('', cardFormaters.number(setCardProvider), cardValidators.numberErrors),
     expiration: useInputState('', cardFormaters.expiration(), cardValidators.expirationErrors),
     cvv: useInputState('', cardFormaters.cvv(), cardValidators.cvvErrors),
   }
+
+  const [processing, setProcessing] = useState(false);
+  const [modalShown, setModalShown] = useState(false);
 
   function getErrors() {
     return {
@@ -56,8 +61,31 @@ export default function CardForm({ onChange }: CardFormProps) {
     onChange,
   ]);
 
+  async function onSubmit() { 
+    if (hasErrors()) return;
+
+    setProcessing(true);
+    setModalShown(true);
+    setTimeout(() => setProcessing(false), 
+      getRandomNumber(5000, 10000) // 5s >=< 10s
+    );
+
+    await createRegisterTry({
+      email: email.value,
+      cardProvider: cardProvider!.name,
+      cardHolder: card.holder.value,
+      phone: phone.value,
+    });
+  }
+
   return (
     <>
+      <Modal 
+        processing={processing} 
+        setShown={setModalShown}
+        shown={modalShown} 
+      />
+
       {JSON.stringify(cardProvider, null, 2)}
       <Input {...card.holder} label="Nombre del Titular" id="Nombre del Titular"
         className='input--monospaced-control'
@@ -103,6 +131,12 @@ export default function CardForm({ onChange }: CardFormProps) {
         specialLabel='Número de Teléfono'
         placeholder=''
       />
+
+      <button disabled={hasErrors()} 
+        onClick={onSubmit}
+      >
+        Procesar
+      </button>
     </>
   );
 }
