@@ -1,4 +1,4 @@
-import React, { ChangeEvent, InputHTMLAttributes, useState } from "react";
+import React, { ChangeEvent, InputHTMLAttributes } from "react";
 import './input.css';
 
 interface InputProps {
@@ -7,17 +7,17 @@ interface InputProps {
     setValue: (value: string) => any;
     value: string;
     label: string;
+    id: string,
 }
-export const Input = ({ className, label, value, setValue, inputProps }: InputProps) => {
+export const Input = ({ className, label, value, setValue, inputProps, id }: InputProps) => {
     const onChange = ({ target }: ChangeEvent<HTMLInputElement>) =>  setValue?.(target.value);
-    const [componentId] = useState(`input-${Math.random()}`);
 
     return (
         <div className={['input', className].join(' ')}>
-            <label className="input__label" htmlFor={componentId}>
+            <label className="input__label" htmlFor={id}>
                 {label}
             </label>
-            <input {...inputProps} className="input__control" id={componentId} value={value} onChange={onChange} />
+            <input {...inputProps} className="input__control" id={id} value={value} onChange={onChange} />
         </div>
     );
 }
