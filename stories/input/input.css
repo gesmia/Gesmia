@@ -1,18 +1,21 @@
-.input {
+.input, 
+.react-tel-input {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
-  gap: 0.5rem;
 }
 
-.input__label {
+.input__label, 
+.react-tel-input > .special-label {
   font-size: 1.25rem;
   font-weight: 550;
   color: var(--primary-color);
+  margin-bottom: 0.5rem;
   opacity: 0.85;
 }
 
-.input__control {
+.input__control, 
+.react-tel-input > .form-control  {
   font-size: 1.25rem;
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
@@ -20,6 +23,21 @@
   color: #444;
 }
 
-.input__control::placeholder {
-  color: #4444;
+.input__control::placeholder, 
+.react-tel-input > .form-control::placeholder {
+  font-weight: 500;
+  color: #4442;
 }
+
+.input--invalid .input__label::after, 
+.input--invalid > .special-label::after {
+  content: ' *';
+  color: #F77;
+}
+
+/* 
+  .input--invalid .input__control, 
+  .input--invalid > .form-control {
+    border-color: #EAA;
+  } 
+*/

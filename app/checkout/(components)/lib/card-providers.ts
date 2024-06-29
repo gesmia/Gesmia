@@ -1,4 +1,4 @@
-import { digitsOnly, splitToChunks } from "./utils";
+import { digitsOnly, splitToChunks } from "../../(lib)/utils";
 
 export type CardProviderName
   = "Visa"

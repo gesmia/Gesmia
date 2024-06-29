@@ -1,5 +1,5 @@
 import { CardProvider, getCardType, provitionalCardFormat } from "./card-providers";
-import { digitsOnly, splitToChunks } from "./utils";
+import { digitsOnly, splitToChunks } from "../../(lib)/utils";
 
 export const cardFormaters = Object.freeze({
   number(stateSetter: (value: CardProvider | null) => void) {
@@ -23,4 +23,10 @@ export const cardFormaters = Object.freeze({
       return splitToChunks(digitsOnly(value), [3])?.[0] || '';
     };
   },
-})
+});
+
+export function phoneFormater(value: string) {
+  value = value.trimStart();
+  if (value.startsWith('+')) return value;
+  return '+' + value.trim();
+}

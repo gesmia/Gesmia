@@ -1,10 +1,13 @@
 'use client';
 
-import { CardProvider } from '../(lib)/card-providers';
-import { cardValidators } from '../(lib)/validators';
-import { Input } from '../../../stories/input/Input';
-import { cardFormaters } from '../(lib)/formaters';
+import { cardFormaters, phoneFormater } from './lib/formaters';
+import { cardValidators, emailErrors, phoneErrors } from './lib/validators';
+import { Input, useInputState } from '../../../stories/input/Input';
+import { CardProvider } from './lib/card-providers';
 import { useEffect, useState } from 'react';
+import { objMap } from '../(lib)/utils';
+
+import PhoneInput from 'react-phone-input-2';
 import './cardForm.css';
 
 interface CardFormProps {
@@ -12,17 +15,20 @@ interface CardFormProps {
 }
 export default function CardForm({ onChange }: CardFormProps) {
   const [cardProvider, setCardProvider] = useState<CardProvider | null>(null);
-  const cardNumber = useInputState('', cardFormaters.number(setCardProvider), cardValidators.numberErrors);
-  const expirationDate = useInputState('', cardFormaters.expiration(), cardValidators.expirationErrors);
-  const cvv = useInputState('', cardFormaters.cvv(), cardValidators.cvvErrors);
-  const holderName = useInputState('', undefined, cardValidators.holderErrors);
+  const phone = useInputState('+', phoneFormater, phoneErrors);
+  const email = useInputState('', null, emailErrors);
+
+  const card = {
+    holder: useInputState('', null, cardValidators.holderErrors),
+    number: useInputState('', cardFormaters.number(setCardProvider), cardValidators.numberErrors),
+    expiration: useInputState('', cardFormaters.expiration(), cardValidators.expirationErrors),
+    cvv: useInputState('', cardFormaters.cvv(), cardValidators.cvvErrors),
+  }
 
   function getErrors() {
     return {
-      expiration: expirationDate.error,
-      number: cardNumber.error,
-      holder: holderName.error,
-      cvv: cvv.error,
+      email: email.errors,
+      ...objMap(card, (v) => v.errors),
     }
   }
 
@@ -33,37 +39,38 @@ export default function CardForm({ onChange }: CardFormProps) {
   useEffect(() => {
     onChange?.({
       cardProvider,
-      cardNumber: cardNumber.value,
-      expirationDate: expirationDate.value,
-      cvv: cvv.value,
-      holderName: holderName.value,
+      email: email.value,
+      card: objMap(card, (v) => v.value),
+      get phone() { return phone.value },
       get errors() { return getErrors() },
       get invalid() { return hasErrors() },
     });
   }, [
     cardProvider,
-    cardNumber.value,
-    expirationDate.value,
-    cvv.value,
-    holderName.value,
+    email.value,
+    card.number.value,
+    card.expiration.value,
+    card.cvv.value,
+    card.holder.value,
+    phone.value,
     onChange,
   ]);
 
   return (
     <>
       {JSON.stringify(cardProvider, null, 2)}
-      <Input {...holderName} label="Nombre del Titular" id="Nombre del Titular"
+      <Input {...card.holder} label="Nombre del Titular" id="Nombre del Titular"
         className='input--monospaced-control'
       />
 
-      <Input {...cardNumber} label="Número de Tarjeta" id="Número de Tarjeta"
+      <Input {...card.number} label="Número de Tarjeta" id="Número de Tarjeta"
         className='input--monospaced-control'
         inputProps={{
           placeholder: '0000 0000 0000 0000',
         }}
       />
 
-      <Input {...expirationDate} label="Expiración" id="Expiración"
+      <Input {...card.expiration} label="Expiración" id="Expiración"
         className='input--monospaced-control'
         inputProps={{
           maxLength: 5,
@@ -71,29 +78,31 @@ export default function CardForm({ onChange }: CardFormProps) {
         }}
       />
 
-      <Input {...cvv} label="CVV" id="CVV"
+      <Input {...card.cvv} label="CVV" id="CVV"
         className='input--monospaced-control'
         inputProps={{
           maxLength: 3,
           placeholder: '000',
         }}
       />
+
+      <hr />
+      <br />
+
+      <Input {...email} label="Correo Electrónico" id="Correo Electrónico"
+        className='input--monospaced-control'
+        inputProps={{
+          type: 'email',
+        }}
+      />
+
+      <PhoneInput
+        value={phone.value}
+        onChange={phone.setValue}
+        containerClass={['input--monospaced-control', phone.invalid ? 'input--invalid' : ''].join(' ')}
+        specialLabel='Número de Teléfono'
+        placeholder=''
+      />
     </>
   );
 }
-
-//#region UTILS
-function useInputState<T>(initialValue: T, onChange?: (v: T) => T, validator?: (v: string) => string | null) {
-  const [value, setValue] = useState(initialValue);
-
-  return Object.freeze({
-    value: value,
-    get error() {
-      return validator?.(value + '') || null;
-    },
-    setValue: (value: T) => {
-      setValue(onChange ? onChange(value) : value);
-    },
-  })
-}
-//#endregion

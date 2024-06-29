@@ -3,6 +3,14 @@ export function digitsOnly(value: string): string {
   return value.replace(/\D/g, '');
 }
 
+export function objMap<k extends keyof any, T, U>(obj: Record<k, T>, map: (value: T) => U): Record<k, U> {
+  return Object.fromEntries(
+    Object.entries(obj).map(
+      ([key, value]: any) => [key, map(value)],
+    ),
+  );
+}
+
 export function splitToChunks(str: string, chunks?: number[]): string[];
 export function splitToChunks(str: string, chunks?: number): string[];
 export function splitToChunks(str: string, chunkSize?: number | number[]): string[] {
