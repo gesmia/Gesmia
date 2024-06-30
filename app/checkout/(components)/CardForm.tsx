@@ -102,7 +102,7 @@ export default function CardForm({ onChange }: CardFormProps) {
         className='input--monospaced-control'
         inputProps={{
           maxLength: 5,
-          placeholder: 'YY/MM',
+          placeholder: 'MM/YY',
         }}
       />
 
