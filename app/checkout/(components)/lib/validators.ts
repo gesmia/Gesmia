@@ -9,7 +9,7 @@ export const cardValidators = Object.freeze<Record<`${CardParts}Errors`, (value:
     if (value.length < 4) return 'invalid length';
     if (Number.isNaN(value)) return 'invalid number';
 
-    const [year, month] = splitToChunks(value, [2, 2]).map((v) => Number(v));
+    const [month, year] = splitToChunks(value, [2, 2]).map((v) => Number(v));
 
     if (month > 12 || month < 1) return 'invalid month';
     if (year > 35 || year < 24) return 'invalid year';
