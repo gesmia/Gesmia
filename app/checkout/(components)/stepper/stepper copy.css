@@ -28,7 +28,7 @@
   display: inline-block;
   height: 1.5rem;
   width: 1.5rem;
-  background-color: #3c3c3c;
+  background-color: #f08080;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +43,7 @@
   content: "";
   width: 0.2rem;
   height: 1.28rem;
-  background: #3c3c3c88;
+  background: #f0808088;
   position: absolute;
   z-index: -0;
 }

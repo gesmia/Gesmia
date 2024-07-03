@@ -1,0 +1,21 @@
+.btn {
+  height: 36px;
+  padding-inline: 0.75rem;
+
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  border: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: #ffffff;
+  border: 0.075rem solid #1c1c1c;
+  min-width: 5rem;
+}
+
+.btn--primary {
+  background-color: #1c1c1c;
+  color: #FFFFFF;
+}

@@ -17,7 +17,7 @@ export default function CheckoutPage() {
   const [cardFormState, setCardFormState] = useState<unknown>(null);
   const [currentStep, setCurrentStep] = useState(0);
   const mainForm = useMainForm();
-  
+
   const [processing, setProcessing] = useState(false);
   const [modalShown, setModalShown] = useState(false);
 
@@ -41,14 +41,14 @@ export default function CheckoutPage() {
   return (
     <>
       <Modal
-        processing={processing} 
+        processing={processing}
         setShown={setModalShown}
-        shown={modalShown} 
+        shown={modalShown}
       />
-      <Header hideWaitingList/>
+      <Header hideWaitingList />
 
       <div style={{ marginInline: '0.5rem' }}>
-        <Stepper 
+        <Stepper
           currentStep={currentStep}
           steps={[
             {
@@ -68,12 +68,10 @@ export default function CheckoutPage() {
                     <EmailInput email={mainForm.email} />
                     <PhoneInput phone={mainForm.phone} />
                   </>
-                  <div>
-                    <button>
-                      Back
-                    </button>
-                    <button onClick={() => setCurrentStep(1)}>
-                      Next
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span></span>
+                    <button className='btn btn--primary' onClick={() => setCurrentStep(1)}>
+                      Siguiente
                     </button>
                   </div>
                 </>
@@ -85,12 +83,14 @@ export default function CheckoutPage() {
                 <>
                   <CardForm {...mainForm} />
                   <div>
-                    <button onClick={() => setCurrentStep(0)}>
-                      Back
-                    </button>
-                    <button>
-                      Next
-                    </button>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <button className='btn' onClick={() => setCurrentStep(0)}>
+                        Atras
+                      </button>
+                      <button className='btn btn--primary' onClick={() => setCurrentStep(1)}>
+                        Siguiente
+                      </button>
+                    </div>
                   </div>
                 </>
               )
@@ -99,7 +99,7 @@ export default function CheckoutPage() {
         />
 
         <br />
-        
+
       </div>
 
     </>
