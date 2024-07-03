@@ -1,14 +1,13 @@
 'use client';
 
-import { cardValidators, emailErrors, phoneErrors } from './lib/validators';
-import { createRegisterTry } from '@/firebase/actions/create-register-try';
-import { cardFormaters, phoneFormater } from './lib/formaters';
-import { useInputState } from '../../../stories/input/Input';
-import { getRandomNumber, objMap } from '../(lib)/utils';
-import { CardProvider } from './lib/card-providers';
+import { cardValidators, emailErrors, phoneErrors } from './validators';
+import { cardFormaters, phoneFormater } from './formaters';
+import { useInputState } from '../../../../stories/input/Input';
+import { CardProvider } from './card-providers';
+import { objMap } from '../../(lib)/utils';
 import { useState } from 'react';
 
-export function useCardForm() {
+export function useMainForm() {
   const [cardProvider, setCardProvider] = useState<CardProvider | null>(null);
   const phone = useInputState('+', phoneFormater, phoneErrors);
   const email = useInputState('', null, emailErrors);

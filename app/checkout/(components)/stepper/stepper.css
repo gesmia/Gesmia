@@ -3,7 +3,7 @@
 }
 
 .stepper__header {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   background: #AAA2;
   border: 0.0875rem solid #AAA4;
   border-radius: 0.28rem;
@@ -54,6 +54,7 @@
 
 .stepper__body {
   overflow: hidden;
+  padding: 0.5rem;
   display: flex;
   gap: 1rem;
 }

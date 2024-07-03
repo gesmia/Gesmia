@@ -51,9 +51,32 @@
   color: #F77;
 }
 
-/* 
-  .input--invalid .input__control, 
-  .input--invalid > .form-control {
-    border-color: #EAA;
-  } 
-*/
+.input__hints {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  color: #AAA;
+  height: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.input__hints > * {
+  min-height: 100%;
+  width: 100%;
+  flex: 1;
+}
+
+.input__hints > * {
+  animation: push-up 0.25s;
+}
+
+@keyframes push-up {
+  from {
+    margin-bottom: -1rem;
+  }
+  to {
+    margin-bottom: 0rem;
+  }
+}

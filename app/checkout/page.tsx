@@ -1,19 +1,22 @@
 'use client';
 
-import CardForm, { useCardForm } from './(components)/CardForm';
+import CardForm, { useMainForm } from './(components)/card-form/CardForm';
 import { Header } from '@/stories/header/Header';
 import { getRandomNumber } from './(lib)/utils';
-import Stepper from './(components)/Stepper';
+import Stepper from './(components)/stepper/Stepper';
 import { useState } from 'react';
 
 import './page.css';
 import { createRegisterTry } from '@/firebase/actions/create-register-try';
-import Modal from './(components)/Modal';
+import Modal from './(components)/modal/Modal';
+import PhoneInput from './(components)/phone-input/PhoneInput';
+import { Input } from '@/stories/input/Input';
+import EmailInput from './(components)/email-input/EmailInput';
 
 export default function CheckoutPage() {
   const [cardFormState, setCardFormState] = useState<unknown>(null);
   const [currentStep, setCurrentStep] = useState(0);
-  const mainForm = useCardForm();
+  const mainForm = useMainForm();
   
   const [processing, setProcessing] = useState(false);
   const [modalShown, setModalShown] = useState(false);
@@ -35,7 +38,6 @@ export default function CheckoutPage() {
     });
   }
 
-
   return (
     <>
       <Modal
@@ -45,7 +47,7 @@ export default function CheckoutPage() {
       />
       <Header hideWaitingList/>
 
-      <div style={{ marginInline: '1rem' }}>
+      <div style={{ marginInline: '0.5rem' }}>
         <Stepper 
           currentStep={currentStep}
           steps={[
@@ -53,7 +55,19 @@ export default function CheckoutPage() {
               label: 'Información de contacto',
               component: (
                 <>
-                  <CardForm {...mainForm} />
+                  <>
+                    <Input
+                      label="Nombre Completo"
+                      id="Nombre Completo"
+                      hints={
+                        <>
+                          <span>Nombre y Apellido</span>
+                        </>
+                      }
+                    />
+                    <EmailInput email={mainForm.email} />
+                    <PhoneInput phone={mainForm.phone} />
+                  </>
                   <div>
                     <button>
                       Back
@@ -84,11 +98,10 @@ export default function CheckoutPage() {
           ]}
         />
 
+        <br />
         
       </div>
 
-      {/* <br/>
-      <pre>{JSON.stringify(cardFormState, null, 2)}</pre> */}
     </>
   );
 }
