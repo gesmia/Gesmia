@@ -1,0 +1,66 @@
+.stepper {
+  margin-top: 1rem;
+}
+
+.stepper__header {
+  margin-bottom: 1rem;
+  background: #AAA2;
+  border: 0.0875rem solid #AAA4;
+  border-radius: 0.28rem;
+}
+
+.stepper__label {
+  font-weight: bold;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+}
+
+.stepper__label--text {
+  color: var(--soft-font);
+  opacity: 0.6;
+}
+
+.stepper__label--active .stepper__label--text {
+  opacity: 0.85;
+}
+
+.stepper__label--indicator {
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: lightcoral;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  margin: 0.5rem;
+  position: relative;
+}
+
+.stepper__label:not(:first-of-type) .stepper__label--indicator::before {
+  content: "";
+  width: 0.2rem;
+  height: 1.28rem;
+  background: #f0808088;
+  position: absolute;
+  z-index: -0;
+}
+
+.stepper__label--indicator::before {
+  bottom: 1.25rem;
+}
+
+.stepper__body {
+  overflow: hidden;
+  display: flex;
+  gap: 1rem;
+}
+
+.stepper__step {
+  flex: 1;
+  min-width: 100%;
+  transition: 0.4s;
+  translate: 0%;
+}

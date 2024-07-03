@@ -7,20 +7,36 @@
 
 .input__label, 
 .react-tel-input > .special-label {
-  font-size: 1.25rem;
-  font-weight: 550;
+  font-size: 0.875rem;
+  font-weight: bold;
   color: var(--primary-color);
-  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  color: #21313c;
   opacity: 0.85;
 }
 
 .input__control, 
-.react-tel-input > .form-control  {
-  font-size: 1.25rem;
-  padding: 0.5rem 0.75rem;
+.react-tel-input > .form-control  {  
+  width: 100%;
+  height: 2.25rem;
   border-radius: 0.25rem;
-  border: 1.5px solid #AAA;
-  color: #444;
+  padding-inline: 0.75rem;
+  font-weight: normal;
+  font-size: 1rem;
+  border: 0.075rem solid #89979b;
+  background: #ffffff;
+  color: var(--soft-font);
+  outline: none;
+
+  box-shadow: 0px 0px 0px 0px #e7eeec00;
+  transition: box-shadow 150ms ease-in-out 0s;
+}
+
+.input:hover .input__control, 
+.react-tel-input:hover > .form-control,
+.input__control:hover, 
+.react-tel-input > .form-control:hover {
+  box-shadow: 0px 0px 0.1rem 0.15rem #e7eeec;
 }
 
 .input__control::placeholder, 

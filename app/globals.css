@@ -6,6 +6,7 @@
 }
 
 :root {
+  --soft-font: #21313c;;
   --primary-color: #222222; /* Main color used in the interface */
   --secondary-color: #333333; /* Secondary color used in the interface */
   --tertiary-color: #2F2F2F99; /* Tertiary color used in the interface with transparency */

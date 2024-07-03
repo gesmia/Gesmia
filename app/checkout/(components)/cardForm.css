@@ -2,3 +2,7 @@
     font-family: 'Roboto Mono', monospace;
 }
 
+.checkout-card-row {
+    display: flex;
+    gap: 1rem;
+}

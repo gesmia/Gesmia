@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '../button/Button';
 import './header.css';
 
-export const Header = () => (
+export const Header = (props: { hideWaitingList?: boolean }) => (
   <header>
     <div className="header">
       <div className='box'>
@@ -27,9 +27,9 @@ export const Header = () => (
           </svg>
         </div>
         <div>
-          <>
+          {!props?.hideWaitingList &&
             <Button size="large" label="Lista de espera" />
-          </>
+          }
         </div>
       </div>
     </div>
