@@ -6,8 +6,8 @@ import { useMainForm } from '../lib/use-main-form';
 type CardFormProps = ReturnType<typeof useMainForm>;
 export default function EmailInput({ email }: { email: CardFormProps['email'] }) {
   const ErrorOn = (v: boolean, e?: any) => (
-    v ? (
-      <span style={{ color: 'red', textAlign: 'end' }}>
+    v && e ? (
+      <span style={{ color: '#F77', textAlign: 'end' }}>
         {e}
       </span>
     ) : null

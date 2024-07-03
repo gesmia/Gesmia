@@ -1,3 +1,31 @@
 .input--monospaced-control .input__control {
-    font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.simple-text {
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: var(--primary-color);
+  padding-bottom: 0.25rem;
+  color: #21313c;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+  display: block;
+  line-height: 1.5rem;
+}
+
+.simple-text--center {
+  text-align: center;
+}
+
+.simple-checkbox {
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.step-form {
+  height: 22.5rem;
+  /* outline: black 1px solid; */
 }

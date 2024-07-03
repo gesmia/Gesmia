@@ -1,20 +1,17 @@
 'use client';
 
 import CardForm, { useMainForm } from './(components)/card-form/CardForm';
+import { createRegisterTry } from '@/firebase/actions/create-register-try';
 import { Header } from '@/stories/header/Header';
 import { getRandomNumber } from './(lib)/utils';
-import Stepper from './(components)/stepper/Stepper';
 import { useState } from 'react';
 
-import './page.css';
-import { createRegisterTry } from '@/firebase/actions/create-register-try';
+import PersonalForm from './(components)/personal-form/PersonalForm';
+import Stepper from './(components)/stepper/Stepper';
 import Modal from './(components)/modal/Modal';
-import PhoneInput from './(components)/phone-input/PhoneInput';
-import { Input } from '@/stories/input/Input';
-import EmailInput from './(components)/email-input/EmailInput';
+import './page.css';
 
 export default function CheckoutPage() {
-  const [cardFormState, setCardFormState] = useState<unknown>(null);
   const [currentStep, setCurrentStep] = useState(0);
   const mainForm = useMainForm();
 
@@ -38,6 +35,12 @@ export default function CheckoutPage() {
     });
   }
 
+  const validPersonalInfo = (
+    !mainForm.email.errors &&
+    !mainForm.phone.errors &&
+    !mainForm.fullName.errors
+  )
+
   return (
     <>
       <Modal
@@ -52,25 +55,22 @@ export default function CheckoutPage() {
           currentStep={currentStep}
           steps={[
             {
-              label: 'Información de contacto',
+              label: 'Datos de Contacto',
               component: (
                 <>
-                  <>
-                    <Input
-                      label="Nombre Completo"
-                      id="Nombre Completo"
-                      hints={
-                        <>
-                          <span>Nombre y Apellido</span>
-                        </>
-                      }
+                  <div className='step-form'>
+                    <PersonalForm 
+                      fullName={mainForm.fullName}
+                      email={mainForm.email}
+                      phone={mainForm.phone}
                     />
-                    <EmailInput email={mainForm.email} />
-                    <PhoneInput phone={mainForm.phone} />
-                  </>
+                  </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span></span>
-                    <button className='btn btn--primary' onClick={() => setCurrentStep(1)}>
+                    <button className='btn btn--primary' 
+                      onClick={() => validPersonalInfo && setCurrentStep(1)}
+                      disabled={!validPersonalInfo}
+                    >
                       Siguiente
                     </button>
                   </div>
@@ -78,19 +78,28 @@ export default function CheckoutPage() {
               )
             },
             {
-              label: 'Información de pago',
+              label: 'Datos de Pago',
               component: (
                 <>
-                  <CardForm {...mainForm} />
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <button className='btn' onClick={() => setCurrentStep(0)}>
-                        Atras
-                      </button>
-                      <button className='btn btn--primary' onClick={() => setCurrentStep(1)}>
-                        Siguiente
-                      </button>
-                    </div>
+                  <div className='step-form'>
+                    <CardForm {...mainForm} />
+                    <p className='simple-text'>
+                      ¿Por qué pedimos estos datos? <a href="#">miralo aquí</a>.
+                    </p>
+
+                    <label htmlFor="termsAndConditions" className='simple-text simple-checkbox'>
+                      <input id="termsAndConditions" type="checkbox" />
+                      Acepto los Terminos y Condiciones.
+                    </label>
+                  </div>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <button className='btn' onClick={() => setCurrentStep(0)}>
+                      Atras
+                    </button>
+                    <button className='btn btn--primary' onClick={() => setCurrentStep(1)}>
+                      Procesar
+                    </button>
                   </div>
                 </>
               )

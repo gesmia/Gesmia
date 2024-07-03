@@ -7,12 +7,15 @@
   background: #AAA2;
   border: 0.0875rem solid #AAA4;
   border-radius: 0.28rem;
+  max-height: 40px;
+  overflow: hidden;
 }
 
 .stepper__label {
   font-weight: bold;
   font-size: 0.875rem;
   box-sizing: border-box;
+  transition: 0.4s;
 }
 
 .stepper__label--text {

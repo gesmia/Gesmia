@@ -11,8 +11,8 @@ export default function CardForm({
   card,
 }: Pick<CardFormProps, 'card'>) {
   const ErrorOn = (v: boolean, e?: any) => (
-    v ? (
-      <span style={{ color: 'red', textAlign: 'end' }}>
+    v && e ? (
+      <span style={{ color: '#F77', textAlign: 'end' }}>
         {e}
       </span>
     ) : null
