@@ -31,6 +31,7 @@
 
   box-shadow: 0px 0px 0px 0px #e7eeec00;
   transition: box-shadow 150ms ease-in-out 0s;
+  padding-block: 0.45rem;
 }
 
 .input:hover .input__control, 
@@ -43,7 +44,7 @@
 .input__control::placeholder, 
 .react-tel-input > .form-control::placeholder {
   font-weight: 500;
-  color: #4442;
+  color: #4443;
 }
 
 .input--invalid .input__label::after, 
