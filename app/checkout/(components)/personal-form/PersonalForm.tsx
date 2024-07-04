@@ -30,8 +30,8 @@ export default function PersonalForm({
           </>
         }
       />
-      <EmailInput email={email} />
       <PhoneInput phone={phone} />
+      <EmailInput email={email} />
 
       <p className='simple-text simple-text--center'>
         Lorem ipsum dolor, sit amet consectetur adipisicing
