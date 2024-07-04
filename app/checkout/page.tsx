@@ -10,9 +10,10 @@ import PersonalForm from './(components)/personal-form/PersonalForm';
 import Stepper from './(components)/stepper/Stepper';
 import Modal from './(components)/modal/Modal';
 import './page.css';
+import Link from 'next/link';
 
 export default function CheckoutPage() {
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0+1);
   const [contenHeight, setContenHeight] = useState(0);
   const [processing, setProcessing] = useState(false);
   const [modalShown, setModalShown] = useState(false);
@@ -107,7 +108,10 @@ export default function CheckoutPage() {
                       <div className='step-form'>
                         <CardForm {...mainForm} />
                         <p className='simple-text'>
-                          ¿Por qué pedimos estos datos? <a href="#">miralo aquí</a>.
+                          ¿Por qué pedimos estos datos?&nbsp;
+                          <Link href="/frequent-questions" target='_blank'>
+                            miralo aquí
+                          </Link>.
                         </p>
 
                         <label htmlFor="termsAndConditions" className='simple-text simple-checkbox'>
@@ -117,7 +121,10 @@ export default function CheckoutPage() {
                               t.target.checked
                             )}
                           />
-                          Acepto los Terminos y Condiciones.
+                          Acepto los 
+                          <Link href="#">
+                            Terminos y Condiciones.
+                          </Link>
                         </label>
                       </div>
 

@@ -48,19 +48,6 @@
   position: relative;
 }
 
-/* .stepper__label:not(:first-of-type) .stepper__label--indicator::before {
-  content: "";
-  width: 0.2rem;
-  height: 1.28rem;
-  background: #3c3c3c88;
-  position: absolute;
-  z-index: -0;
-}
-
-.stepper__label--indicator::before {
-  bottom: 1.25rem;
-} */
-
 .stepper__label:not(:first-of-type) .stepper__label--indicator::before {
   content: "";
   width: 1.5rem;

@@ -2,6 +2,17 @@
   box-sizing: border-box;
 }
 
+a {
+  color: #085dcc;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+a:hover {
+  color: #146de0;
+  text-decoration: underline;
+}
+
 .input--monospaced-control .input__control {
   font-family: 'Roboto Mono', monospace;
 }
@@ -30,8 +41,11 @@
 }
 
 .step-form {
-  height: 22.5rem;
+  height: 24rem;
   /* outline: black 1px solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container {
@@ -59,6 +73,7 @@
   perspective: 1000px;
   border-radius: 0 0.5rem 0.5rem 0;
   transition: min-width 0.25s;
+  pointer-events: none;
 }
 
 .checkout-card__image > img {
@@ -75,6 +90,8 @@
 
   animation: img-rotations 10s infinite;
   opacity: 0.95;
+
+  filter: drop-shadow(0 0 5rem #444);
 }
 
 @keyframes img-rotations {
@@ -92,6 +109,7 @@
     margin: 1rem;
     border: 0.075rem solid #DDD;
     border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem #0002;
   }
 
   .checkout-card__image {
@@ -107,4 +125,9 @@
   .checkout-card__image {
     min-width: 480px;
   }
+}
+
+label[for='termsAndConditions'] {
+  width: fit-content;
+  cursor: pointer;
 }

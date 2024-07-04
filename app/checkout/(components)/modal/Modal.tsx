@@ -48,9 +48,11 @@ export default function Modal({ shown, processing, setShown }: Props) {
               delectus officia eaque repellendus sint excepturi sit 
               maxime odit!
             </div>
-            <button onClick={() => setShown?.(false)}>
-              Cerrar
-            </button>
+            <div style={{ textAlign: 'end' }}>
+              <button className="btn btn--primary" onClick={() => setShown?.(false)}>
+                Cerrar
+              </button>
+            </div>
           </>
         )
       }
