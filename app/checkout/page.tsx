@@ -52,7 +52,15 @@ export default function CheckoutPage() {
     !mainForm.email.errors &&
     !mainForm.phone.errors &&
     !mainForm.fullName.errors
-  )
+  );
+
+  const validCardInfo = (
+    !mainForm.card.holder.errors &&
+    !mainForm.card.number.errors &&
+    !mainForm.card.expiration.errors &&
+    !mainForm.card.cvv.errors &&
+    mainForm.tcAccepted.value
+  );
 
   return (
     <>
@@ -103,7 +111,12 @@ export default function CheckoutPage() {
                         </p>
 
                         <label htmlFor="termsAndConditions" className='simple-text simple-checkbox'>
-                          <input id="termsAndConditions" type="checkbox" />
+                          <input id="termsAndConditions" type="checkbox" 
+                            checked={mainForm.tcAccepted.value}
+                            onChange={(t) => mainForm.tcAccepted.setValue(
+                              t.target.checked
+                            )}
+                          />
                           Acepto los Terminos y Condiciones.
                         </label>
                       </div>
@@ -112,7 +125,10 @@ export default function CheckoutPage() {
                         <button className='btn' onClick={() => setCurrentStep(0)}>
                           Atras
                         </button>
-                        <button className='btn btn--primary' onClick={() => setCurrentStep(1)}>
+                        <button className='btn btn--primary' 
+                          onClick={() => validCardInfo && onSubmit()}
+                          disabled={!validCardInfo}
+                        >
                           Procesar
                         </button>
                       </div>
