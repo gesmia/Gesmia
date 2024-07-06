@@ -13,7 +13,7 @@ import './page.css';
 import Link from 'next/link';
 
 export default function CheckoutPage() {
-  const [currentStep, setCurrentStep] = useState(0+1);
+  const [currentStep, setCurrentStep] = useState(0);
   const [contenHeight, setContenHeight] = useState(0);
   const [processing, setProcessing] = useState(false);
   const [modalShown, setModalShown] = useState(false);
