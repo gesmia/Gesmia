@@ -44,9 +44,11 @@ export default function Modal({ shown, processing, setShown }: Props) {
             <div className="modal__text">
               Tu cuenta de Thappie ha sido creada, pronto se te notificará cuando Thappie sea lanzado. No se te cobrará antes sin ser notificado.
             </div>
-            <button onClick={() => setShown?.(false)}>
-              Cerrar
-            </button>
+            <div style={{ textAlign: 'end' }}>
+              <button className="btn btn--primary" onClick={() => setShown?.(false)}>
+                Cerrar
+              </button>
+            </div>
           </>
         )
       }

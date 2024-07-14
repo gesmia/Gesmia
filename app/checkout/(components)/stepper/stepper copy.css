@@ -7,37 +7,28 @@
   background: #AAA2;
   border: 0.0875rem solid #AAA4;
   border-radius: 0.28rem;
-  max-height: 40px;
-  overflow: hidden;
-  display: flex;
 }
 
 .stepper__label {
   font-weight: bold;
   font-size: 0.875rem;
   box-sizing: border-box;
-  transition: 0.4s;
-  padding-right: 1rem;
-  opacity: 0.4;
 }
 
 .stepper__label--text {
   color: var(--soft-font);
-}
-
-.stepper__label--active{
-  opacity: 1;
+  opacity: 0.6;
 }
 
 .stepper__label--active .stepper__label--text {
-  opacity: 1;
+  opacity: 0.85;
 }
 
 .stepper__label--indicator {
   display: inline-block;
   height: 1.5rem;
   width: 1.5rem;
-  background-color: #3c3c3c;
+  background-color: #f08080;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -50,17 +41,15 @@
 
 .stepper__label:not(:first-of-type) .stepper__label--indicator::before {
   content: "";
-  width: 1.5rem;
-  height: 0.15rem;
-  background: #3c3c3c88;
+  width: 0.2rem;
+  height: 1.28rem;
+  background: #f0808088;
   position: absolute;
   z-index: -0;
-  transform: rotateZ(-70deg);
-  border-radius: 0.75rem;
 }
 
 .stepper__label--indicator::before {
-  right: 1.5rem;
+  bottom: 1.25rem;
 }
 
 .stepper__body {

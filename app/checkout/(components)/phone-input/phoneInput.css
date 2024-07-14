@@ -7,7 +7,6 @@
   box-sizing: border-box;
 }
 
-
 .react-tel-input .special-label {
   display: block;
   position: static;
@@ -28,3 +27,24 @@
   border: 0.075rem solid #89979b;
   border-right-color: #cacaca;
 }
+
+.react-tel-input .flag-dropdown {
+  top: 1.25rem;
+}
+
+.react-tel-input::after {
+  content: "Para verificación de cuenta";
+
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  color: #AAA;
+  height: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* .react-tel-input > .form-control::after  {
+  content: "Hallo World";
+} */

@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+  width: 100%;
 }
 
 .input__label, 
@@ -16,7 +17,7 @@
 }
 
 .input__control, 
-.react-tel-input > .form-control  {  
+.react-tel-input > .form-control {
   width: 100%;
   height: 2.25rem;
   border-radius: 0.25rem;
@@ -30,6 +31,7 @@
 
   box-shadow: 0px 0px 0px 0px #e7eeec00;
   transition: box-shadow 150ms ease-in-out 0s;
+  padding-block: 0.45rem;
 }
 
 .input:hover .input__control, 
@@ -42,7 +44,7 @@
 .input__control::placeholder, 
 .react-tel-input > .form-control::placeholder {
   font-weight: 500;
-  color: #4442;
+  color: #4443;
 }
 
 .input--invalid .input__label::after, 

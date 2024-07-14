@@ -26,8 +26,8 @@ export default function PhoneInput({ phone }: { phone: CardFormProps['phone'] })
   }, []);
 
   const ErrorOn = (v: boolean, e?: any) => (
-    v ? (
-      <span style={{ color: 'red', textAlign: 'end' }}>
+    v && e ? (
+      <span style={{ color: '#F77', textAlign: 'end' }}>
         {e}
       </span>
     ) : null

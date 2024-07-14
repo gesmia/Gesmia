@@ -1,26 +1,36 @@
 'use client';
 
 import CardForm, { useMainForm } from './(components)/card-form/CardForm';
+import { createRegisterTry } from '@/firebase/actions/create-register-try';
 import { Header } from '@/stories/header/Header';
 import { getRandomNumber } from './(lib)/utils';
-import Stepper from './(components)/stepper/Stepper';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import './page.css';
-import { createRegisterTry } from '@/firebase/actions/create-register-try';
+import PersonalForm from './(components)/personal-form/PersonalForm';
+import Stepper from './(components)/stepper/Stepper';
 import Modal from './(components)/modal/Modal';
-import PhoneInput from './(components)/phone-input/PhoneInput';
-import { Input } from '@/stories/input/Input';
-import EmailInput from './(components)/email-input/EmailInput';
-import { ButtonManage } from '@/stories/button-manage/Button';
+import './page.css';
+import Link from 'next/link';
 
 export default function CheckoutPage() {
-  const [cardFormState, setCardFormState] = useState<unknown>(null);
   const [currentStep, setCurrentStep] = useState(0);
-  const mainForm = useMainForm();
-  
+  const [contenHeight, setContenHeight] = useState(0);
   const [processing, setProcessing] = useState(false);
   const [modalShown, setModalShown] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const mainForm = useMainForm();
+
+  useEffect(() => {
+    if (!contentRef.current) return;
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (let { target } of entries) {
+        setContenHeight(target.clientHeight);
+      }
+    });
+
+    resizeObserver.observe(contentRef.current);
+    return () => resizeObserver.disconnect();
+  }, []);
 
   async function onSubmit() {
     if (mainForm.hasErrors()) return;
@@ -39,59 +49,106 @@ export default function CheckoutPage() {
     });
   }
 
+  const validPersonalInfo = (
+    !mainForm.email.errors &&
+    !mainForm.phone.errors &&
+    !mainForm.fullName.errors
+  );
+
+  const validCardInfo = (
+    !mainForm.card.holder.errors &&
+    !mainForm.card.number.errors &&
+    !mainForm.card.expiration.errors &&
+    !mainForm.card.cvv.errors &&
+    mainForm.tcAccepted.value
+  );
+
   return (
     <>
       <Modal
-        processing={processing} 
+        processing={processing}
         setShown={setModalShown}
-        shown={modalShown} 
+        shown={modalShown}
       />
-      <Header hideWaitingList/>
+      <Header hideWaitingList />
 
-      <div style={{ marginInline: '0.5rem' }}>
-        <Stepper 
-          currentStep={currentStep}
-          steps={[
-            {
-              label: 'Información de contacto',
-              component: (
-                <>
-                  <>
-                    <Input
-                      label="Nombre"
-                      id="Nombre Completo"
-                      hints={
-                        <>
-                          <span>Pedro Rodriguez</span>
-                        </>
-                      }
-                    />
-                    <EmailInput email={mainForm.email} />
-                    <PhoneInput phone={mainForm.phone} />
-                  </>
-                  <div>
-                    <ButtonManage label='Siguiente' onClick={() => setCurrentStep(1)}/>
-                  </div>
-                </>
-              )
-            },
-            {
-              label: 'Información de pago',
-              component: (
-                <>
-                  <CardForm {...mainForm} />
-                  <div className='managers-buttons'>
-                  <ButtonManage label='Atrás' onClick={() => setCurrentStep(0)}/>
-                  <ButtonManage label='Enviar' onClick={() => onSubmit()}/>
-                  </div>
-                </>
-              )
-            },
-          ]}
-        />
+      <div className='container'>
+        <div className='checkout-card'>
+          <div className='checkout-card__content' ref={contentRef}>
+            <Stepper
+              currentStep={currentStep}
+              steps={[
+                {
+                  label: 'Datos de Contacto',
+                  component: (
+                    <>
+                      <div className='step-form'>
+                        <PersonalForm 
+                          fullName={mainForm.fullName}
+                          email={mainForm.email}
+                          phone={mainForm.phone}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <span></span>
+                        <button className='btn btn--primary' 
+                          onClick={() => validPersonalInfo && setCurrentStep(1)}
+                          disabled={!validPersonalInfo}
+                        >
+                          Siguiente
+                        </button>
+                      </div>
+                    </>
+                  )
+                },
+                {
+                  label: 'Datos de Pago',
+                  component: (
+                    <>
+                      <div className='step-form'>
+                        <CardForm {...mainForm} />
+                        <p className='simple-text'>
+                          ¿Por qué pedimos estos datos?&nbsp;
+                          <Link href="/frequent-questions" target='_blank'>
+                            miralo aquí
+                          </Link>.
+                        </p>
 
-        <br />
-        
+                        <label htmlFor="termsAndConditions" className='simple-text simple-checkbox'>
+                          <input id="termsAndConditions" type="checkbox" 
+                            checked={mainForm.tcAccepted.value}
+                            onChange={(t) => mainForm.tcAccepted.setValue(
+                              t.target.checked
+                            )}
+                          />
+                          Acepto los 
+                          <Link href="#">
+                            Terminos y Condiciones.
+                          </Link>
+                        </label>
+                      </div>
+
+                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <button className='btn' onClick={() => setCurrentStep(0)}>
+                          Atras
+                        </button>
+                        <button className='btn btn--primary' 
+                          onClick={() => validCardInfo && onSubmit()}
+                          disabled={!validCardInfo}
+                        >
+                          Procesar
+                        </button>
+                      </div>
+                    </>
+                  )
+                },
+              ]}
+            />
+          </div>
+          <div className='checkout-card__image' style={{ height: `${contenHeight}px`}}>
+            <img src='/head/report_view.png' height={300}/>
+          </div>
+        </div>
       </div>
 
     </>

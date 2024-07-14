@@ -1,8 +1,133 @@
-.input--monospaced-control .input__control {
-    font-family: 'Roboto Mono', monospace;
+* {
+  box-sizing: border-box;
 }
 
-.managers-buttons {
+a {
+  color: #085dcc;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+a:hover {
+  color: #146de0;
+  text-decoration: underline;
+}
+
+.input--monospaced-control .input__control {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.simple-text {
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: var(--primary-color);
+  padding-bottom: 0.25rem;
+  color: #21313c;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+  display: block;
+  line-height: 1.5rem;
+}
+
+.simple-text--center {
+  text-align: center;
+}
+
+.simple-checkbox {
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.step-form {
+  height: 24rem;
+  /* outline: black 1px solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container {
+  margin: auto;
+  max-width: calc(1200px + 1rem);
+  padding-inline: 0.5rem;
+}
+
+.checkout-card {
+  display: flex;
+  /* overflow: hidden; */
+}
+
+.checkout-card__content {
+  height: min-content;
+}
+
+.checkout-card__image {
+  display: none;
+  min-width: 320px;
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  position: relative;
+  perspective: 1000px;
+  border-radius: 0 0.5rem 0.5rem 0;
+  transition: min-width 0.25s;
+  pointer-events: none;
+}
+
+.checkout-card__image > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: rotateZ(35deg);
+  position: absolute;
+  margin: auto;
+  bottom: -25%;
+  left: -25%;
+  right: 0;
+  top: 0;
+
+  animation: img-rotations 10s infinite;
+  opacity: 0.95;
+
+  filter: drop-shadow(0 0 5rem #444);
+}
+
+@keyframes img-rotations {
+  0%, 100% {
+    transform: rotateZ(35deg) rotateY(-10deg);
+  }
+  50% {
+    transform: rotateZ(30deg) rotateY(10deg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .checkout-card {
     display: flex;
-    gap: 12px;
+    margin: 1rem;
+    border: 0.075rem solid #DDD;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem #0002;
+  }
+
+  .checkout-card__image {
+    display: block;
+  }
+
+  .checkout-card__content {
+    padding: 0 1rem 0.5rem 1rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .checkout-card__image {
+    min-width: 480px;
+  }
+}
+
+label[for='termsAndConditions'] {
+  width: fit-content;
+  cursor: pointer;
 }

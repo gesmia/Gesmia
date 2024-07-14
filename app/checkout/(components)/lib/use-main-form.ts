@@ -11,6 +11,12 @@ export function useMainForm() {
   const [cardProvider, setCardProvider] = useState<CardProvider | null>(null);
   const phone = useInputState('+', phoneFormater, phoneErrors);
   const email = useInputState('', null, emailErrors);
+  const tcAccepted = useInputState(false, null);
+  const fullName = useInputState('', null, (value) => {
+    return value?.length < 5 ? 'Debe ingresarse al menos 5 caracteres' : null
+  });
+
+
   const card = {
     holder: useInputState('', null, cardValidators.holderErrors),
     number: useInputState('', cardFormaters.number(setCardProvider), cardValidators.numberErrors),
@@ -23,6 +29,7 @@ export function useMainForm() {
 
   function getErrors() {
     return {
+      phone: phone.errors,
       email: email.errors,
       ...objMap(card, (v) => v.errors),
     };
@@ -40,6 +47,8 @@ export function useMainForm() {
     card,
     processing,
     modalShown,
+    fullName,
+    tcAccepted,
     setModalShown,
     getErrors,
     hasErrors,

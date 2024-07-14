@@ -4,5 +4,41 @@
 
 .checkout-card-row {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
+}
+
+.input__control input {
+    padding: 0 !important;
+    width: 100%;
+}
+
+.input__control div,
+.input__control span,
+.input__control input,
+.checkout-input--expiration select {
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    outline: none;
+}
+
+.checkout-input--expiration select option {
+  color: var(--soft-font);
+}
+
+.checkout-input--expiration select:focus-visible 
+.checkout-input--expiration select:focus {
+    outline: none;
+}
+
+.checkout-input--expiration select.placeholder + span,
+.checkout-input--expiration select.placeholder {
+    color: #4443;
+}
+
+.checkout-input--expiration select::-ms-expand {
+    display: none;
 }
