@@ -12,6 +12,7 @@ import Modal from './(components)/modal/Modal';
 import PhoneInput from './(components)/phone-input/PhoneInput';
 import { Input } from '@/stories/input/Input';
 import EmailInput from './(components)/email-input/EmailInput';
+import { ButtonManage } from '@/stories/button-manage/Button';
 
 export default function CheckoutPage() {
   const [cardFormState, setCardFormState] = useState<unknown>(null);
@@ -57,11 +58,11 @@ export default function CheckoutPage() {
                 <>
                   <>
                     <Input
-                      label="Nombre Completo"
+                      label="Nombre"
                       id="Nombre Completo"
                       hints={
                         <>
-                          <span>Nombre y Apellido</span>
+                          <span>Pedro Rodriguez</span>
                         </>
                       }
                     />
@@ -69,12 +70,7 @@ export default function CheckoutPage() {
                     <PhoneInput phone={mainForm.phone} />
                   </>
                   <div>
-                    <button>
-                      Back
-                    </button>
-                    <button onClick={() => setCurrentStep(1)}>
-                      Next
-                    </button>
+                    <ButtonManage label='Siguiente' onClick={() => setCurrentStep(1)}/>
                   </div>
                 </>
               )
@@ -84,13 +80,9 @@ export default function CheckoutPage() {
               component: (
                 <>
                   <CardForm {...mainForm} />
-                  <div>
-                    <button onClick={() => setCurrentStep(0)}>
-                      Back
-                    </button>
-                    <button>
-                      Next
-                    </button>
+                  <div className='managers-buttons'>
+                  <ButtonManage label='Atrás' onClick={() => setCurrentStep(0)}/>
+                  <ButtonManage label='Enviar' onClick={() => onSubmit()}/>
                   </div>
                 </>
               )

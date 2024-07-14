@@ -1,3 +1,8 @@
 .input--monospaced-control .input__control {
     font-family: 'Roboto Mono', monospace;
 }
+
+.managers-buttons {
+    display: flex;
+    gap: 12px;
+}

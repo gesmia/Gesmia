@@ -39,14 +39,10 @@ export default function Modal({ shown, processing, setShown }: Props) {
         : (
           <>
             <h2 className="modal__title">
-              Fallo en la transacción!
+             Tu cueta de thappie está reservada
             </h2>
             <div className="modal__text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Ipsum accusantium sapiente molestiae quibusdam cumque, 
-              soluta minima debitis illo velit architecto consectetur,
-              delectus officia eaque repellendus sint excepturi sit 
-              maxime odit!
+              Tu cuenta de Thappie ha sido creada, pronto se te notificará cuando Thappie sea lanzado. No se te cobrará antes sin ser notificado.
             </div>
             <button onClick={() => setShown?.(false)}>
               Cerrar
