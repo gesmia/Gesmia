@@ -14,7 +14,7 @@ export async function createRegisterSession(args: Args) {
 
   const response = await addDoc(registerSessionCollection, {
     sessionId: args.sessionId.toLowerCase().trim(),
-    countryCode: args.countryCode?.toLowerCase().trim(),
+    countryCode: args.countryCode?.toLowerCase().trim() || null,
     ipAddress: ipAddress || null,
     createdAt: new Date(),
   });
