@@ -33,7 +33,7 @@
 }
 
 .react-tel-input::after {
-  content: "Para verificación de cuenta";
+  content: "Usaremos el número para verificar tu cuenta de Thappie App";
 
   font-size: 0.85rem;
   margin-top: 0.25rem;

@@ -35,12 +35,12 @@ export default function Stepper({
           <div key={i} className={['stepper__label', currentStep === i ? 'stepper__label--active' : ''].join(' ')}
             /* style={{ translate: `0px -${currentStep * 40}px` }} */
           >
-            <span className="stepper__label--indicator">
-              {i + 1}
-            </span>
             <span className="stepper__label--text">
               {e.label}
             </span>
+
+<div className="line">
+</div>
           </div>
         ))}
       </div>

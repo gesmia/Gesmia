@@ -5,9 +5,33 @@ import { Input } from '../../../../stories/input/Input';
 import { useMainForm } from '../lib/use-main-form';
 import './cardForm.css';
 
+import AMEX from '../../../../public/cards/AMEX.png';
+import DISCOVER from '../../../../public/cards/DISCOVER.png';
+import MASTERCARD from '../../../../public/cards/MASTERCARD.png';
+import VISA from '../../../../public/cards/VISA.png';
+
+import Image from 'next/image';
+
 export * from '../lib/use-main-form';
 
 type CardFormProps = ReturnType<typeof useMainForm>;
+
+const getCardImage = (provider?: { name: string } | null) => {
+  if (!provider) return null;
+  switch (provider.name) {
+    case 'Amex':
+      return <Image width={26} src={AMEX} alt="AMEX" />;
+    case 'Discover':
+      return <Image width={26} src={DISCOVER} alt="DISCOVER" />;
+    case 'Mastercard':
+      return <Image width={26} src={MASTERCARD} alt="MASTERCARD" />;
+    case 'Visa':
+      return <Image width={26} src={VISA} alt="VISA" />;
+    default:
+      return null;
+  }
+};
+
 export default function CardForm({
   card, cardProvider
 }: Pick<CardFormProps, 'card' | 'cardProvider'>) {
@@ -18,6 +42,8 @@ export default function CardForm({
       </span>
     ) : null
   )
+
+  
 
   return (
     <>
@@ -38,7 +64,7 @@ export default function CardForm({
         }}
         customControl={({ value, onChange }) => (
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            {cardProvider?.name && `(${cardProvider.name})`}
+         {getCardImage(cardProvider)}
             <input value={value} onChange={onChange} />
           </div>
         )}

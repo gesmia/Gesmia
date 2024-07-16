@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --primary-color: #4a5568; /* Gris para el texto */
+  --soft-font: #2d3748; /* Gris oscuro para el texto */
+  --input-background: #ffffff; /* Blanco para el fondo del input */
+  --input-border: #e2e8f0; /* Gris claro para el borde del input */
+  --input-focus-border: #63b3ed; /* Azul claro para el borde del input en foco */
+  --input-placeholder: #a0aec0; /* Gris claro para el placeholder */
+  --input-invalid: #e53e3e; /* Rojo para los inputs inválidos */
+  --input-hint: #718096; /* Gris medio para los hints */
+  --font-family: 'Inter', sans-serif; /* Tipografía personalizada */
+  --font-size-base: 1rem; /* Tamaño base */
+  --font-weight-normal: 400; /* Peso normal */
+  --font-weight-bold: 600; /* Peso en negrita */
+  --font-weight-extrabold: 700; /* Peso extra negrita */
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  color: var(--soft-font);
+  letter-spacing: -0.3px;
+}
+
 .input, 
 .react-tel-input {
   display: flex;
@@ -9,10 +35,9 @@
 .input__label, 
 .react-tel-input > .special-label {
   font-size: 0.875rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--primary-color);
   padding-bottom: 0.25rem;
-  color: #21313c;
   opacity: 0.85;
 }
 
@@ -20,43 +45,43 @@
 .react-tel-input > .form-control {
   width: 100%;
   height: 2.25rem;
-  border-radius: 0.25rem;
+  border-radius: 0.375rem;
   padding-inline: 0.75rem;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 1rem;
-  border: 0.075rem solid #89979b;
-  background: #ffffff;
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
   color: var(--soft-font);
   outline: none;
-
-  box-shadow: 0px 0px 0px 0px #e7eeec00;
-  transition: box-shadow 150ms ease-in-out 0s;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  transition: border 150ms ease-in-out, box-shadow 150ms ease-in-out;
   padding-block: 0.45rem;
 }
 
-.input:hover .input__control, 
-.react-tel-input:hover > .form-control,
-.input__control:hover, 
-.react-tel-input > .form-control:hover {
-  box-shadow: 0px 0px 0.1rem 0.15rem #e7eeec;
+.input:focus .input__control, 
+.react-tel-input:focus > .form-control,
+.input__control:focus, 
+.react-tel-input > .form-control:focus {
+  border: 1px solid var(--input-focus-border);
+  box-shadow: 0 0 0 0.2rem rgba(99, 179, 237, 0.25);
 }
 
 .input__control::placeholder, 
 .react-tel-input > .form-control::placeholder {
   font-weight: 500;
-  color: #4443;
+  color: var(--input-placeholder);
 }
 
 .input--invalid .input__label::after, 
 .input--invalid > .special-label::after {
   content: ' *';
-  color: #F77;
+  color: var(--input-invalid);
 }
 
 .input__hints {
   font-size: 0.85rem;
   margin-top: 0.25rem;
-  color: #AAA;
+  color: var(--input-hint);
   height: 1rem;
   display: flex;
   flex-direction: column;

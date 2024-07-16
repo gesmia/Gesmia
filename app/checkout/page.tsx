@@ -14,23 +14,11 @@ import Link from 'next/link';
 
 export default function CheckoutPage() {
   const [currentStep, setCurrentStep] = useState(0);
-  const [contenHeight, setContenHeight] = useState(0);
   const [processing, setProcessing] = useState(false);
   const [modalShown, setModalShown] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const mainForm = useMainForm();
 
-  useEffect(() => {
-    if (!contentRef.current) return;
-    const resizeObserver = new ResizeObserver((entries) => {
-      for (let { target } of entries) {
-        setContenHeight(target.clientHeight);
-      }
-    });
-
-    resizeObserver.observe(contentRef.current);
-    return () => resizeObserver.disconnect();
-  }, []);
 
   async function onSubmit() {
     if (mainForm.hasErrors()) return;
@@ -73,6 +61,16 @@ export default function CheckoutPage() {
       <Header hideWaitingList />
 
       <div className='container'>
+
+        <div className='checkout-count'>
+          <div className='countdown-header'>
+            <h3>Oferta lanzamiento - $0.0 / Mensual</h3>
+          </div>
+          <div className='countdown-timer'>
+            <p><span className='countdown-text'>1</span><span className='countdown-number'>D</span> <span className='countdown-text'>3</span><span className='countdown-number'>H</span> <span className='countdown-text'>32</span><span className='countdown-number'>M</span> <span className='countdown-text'>12</span><span className='countdown-number'>S</span></p>
+          </div>
+        </div>
+
         <div className='checkout-card'>
           <div className='checkout-card__content' ref={contentRef}>
             <Stepper
@@ -83,7 +81,7 @@ export default function CheckoutPage() {
                   component: (
                     <>
                       <div className='step-form'>
-                        <PersonalForm 
+                        <PersonalForm
                           fullName={mainForm.fullName}
                           email={mainForm.email}
                           phone={mainForm.phone}
@@ -91,7 +89,7 @@ export default function CheckoutPage() {
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <span></span>
-                        <button className='btn btn--primary' 
+                        <button className='btn btn--primary'
                           onClick={() => validPersonalInfo && setCurrentStep(1)}
                           disabled={!validPersonalInfo}
                         >
@@ -115,13 +113,13 @@ export default function CheckoutPage() {
                         </p>
 
                         <label htmlFor="termsAndConditions" className='simple-text simple-checkbox'>
-                          <input id="termsAndConditions" type="checkbox" 
+                          <input id="termsAndConditions" type="checkbox"
                             checked={mainForm.tcAccepted.value}
                             onChange={(t) => mainForm.tcAccepted.setValue(
                               t.target.checked
                             )}
                           />
-                          Acepto los 
+                          Acepto los
                           <Link href="#">
                             Terminos y Condiciones.
                           </Link>
@@ -132,7 +130,7 @@ export default function CheckoutPage() {
                         <button className='btn' onClick={() => setCurrentStep(0)}>
                           Atras
                         </button>
-                        <button className='btn btn--primary' 
+                        <button className='btn btn--primary'
                           onClick={() => validCardInfo && onSubmit()}
                           disabled={!validCardInfo}
                         >
@@ -145,8 +143,7 @@ export default function CheckoutPage() {
               ]}
             />
           </div>
-          <div className='checkout-card__image' style={{ height: `${contenHeight}px`}}>
-            <img src='/head/report_view.png' height={300}/>
+          <div className='checkout-card__image'>
           </div>
         </div>
       </div>

@@ -50,84 +50,112 @@ a:hover {
 
 .container {
   margin: auto;
-  max-width: calc(1200px + 1rem);
-  padding-inline: 0.5rem;
-}
-
-.checkout-card {
-  display: flex;
-  /* overflow: hidden; */
+  max-width: calc(1260px + 1rem);
+  padding: 0.5rem;
 }
 
 .checkout-card__content {
-  height: min-content;
+  width: 100%;
+}
+
+.checkout-card {
+  gap: 12px;
+  display: flex;
+  align-items: stretch; 
+  flex-direction: row;
+  max-height: 600px;
+  overflow: hidden;
+  margin-top: 32px;
+  height: 100%; 
+}
+
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .checkout-card {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .checkout-card {
+    flex-direction: column;
+    max-height: 700px;
+  }
+
+  .checkout-card__image {
+  height: 500px;
+}
+
 }
 
 .checkout-card__image {
-  display: none;
-  min-width: 320px;
-  height: 100%;
-  overflow: hidden;
-  background-color: black;
-  position: relative;
-  perspective: 1000px;
-  border-radius: 0 0.5rem 0.5rem 0;
-  transition: min-width 0.25s;
-  pointer-events: none;
-}
-
-.checkout-card__image > img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  transform: rotateZ(35deg);
-  position: absolute;
-  margin: auto;
-  bottom: -25%;
-  left: -25%;
-  right: 0;
-  top: 0;
-
-  animation: img-rotations 10s infinite;
-  opacity: 0.95;
-
-  filter: drop-shadow(0 0 5rem #444);
-}
-
-@keyframes img-rotations {
-  0%, 100% {
-    transform: rotateZ(35deg) rotateY(-10deg);
-  }
-  50% {
-    transform: rotateZ(30deg) rotateY(10deg);
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .checkout-card {
-    display: flex;
-    margin: 1rem;
-    border: 0.075rem solid #DDD;
-    border-radius: 0.5rem;
-    box-shadow: 0.1rem 0.1rem 0.5rem #0002;
-  }
-
-  .checkout-card__image {
-    display: block;
-  }
-
-  .checkout-card__content {
-    padding: 0 1rem 0.5rem 1rem;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .checkout-card__image {
-    min-width: 480px;
-  }
+  border: 1px solid rgba(4, 0, 0, 0.045);
+  border-radius: 12px;
+  background-image: url('/head/map.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 
 label[for='termsAndConditions'] {
   width: fit-content;
   cursor: pointer;
+}
+
+.checkout-count {
+  height: 62px;
+  margin-top: 24px;
+  border: 1px solid rgba(107, 107, 107, 0.281);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 18px;
+  padding-right: 18px;
+  align-items: center;
+}
+
+.countdown-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.countdown-timer p {
+  margin: 0;
+  display: flex;
+  gap: 5px;
+}
+
+.countdown-text {
+  color: black;
+}
+
+.countdown-number {
+  color: red;
+}
+
+.title-head {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .title-head {
+    font-size: 14px;
+  }
+
+  .countdown-header h3 {
+    font-size: 1rem;
+  }
+
+  .checkout-count {
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 }

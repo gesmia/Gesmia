@@ -4,9 +4,6 @@
 
 .stepper__header {
   margin-bottom: 0.5rem;
-  background: #AAA2;
-  border: 0.0875rem solid #AAA4;
-  border-radius: 0.28rem;
   max-height: 40px;
   overflow: hidden;
   display: flex;
@@ -65,7 +62,6 @@
 
 .stepper__body {
   overflow: hidden;
-  padding: 0.5rem;
   display: flex;
   gap: 1rem;
 }
@@ -75,4 +71,13 @@
   min-width: 100%;
   transition: 0.4s;
   translate: 0%;
+}
+
+
+.line {
+  margin-top: 4px;
+  border-radius: 100px;
+  height: 2px;
+  width: 100%;
+  background-color: #5a5a5a;
 }
