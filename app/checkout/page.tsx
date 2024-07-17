@@ -13,6 +13,7 @@ import './page.css';
 import Link from 'next/link';
 import { createRegisterSession } from '@/firebase/actions/create-register-session';
 import { createCompleatedPersonalInfo } from '@/firebase/actions/create-compleated-personal-info';
+import { Timer } from './(components)/timer/Timer';
 
 export default function CheckoutPage() {
   const [compleatedPI, setCompleatedPI] = useState(false);
@@ -82,7 +83,8 @@ export default function CheckoutPage() {
             <h3>Oferta lanzamiento - <strong><u>$0.0</u></strong> / Mensual</h3>
           </div>
           <div className='countdown-timer'>
-            <p className='ctt'><span className='countdown-text'>1</span><span className='countdown-number'>D</span> <span className='countdown-text'>3</span><span className='countdown-number'>H</span> <span className='countdown-text'>32</span><span className='countdown-number'>M</span> <span className='countdown-text'>12</span><span className='countdown-number'>S</span></p>
+            {/* <p className='ctt'><span className='countdown-text'>1</span><span className='countdown-number'>D</span> <span className='countdown-text'>3</span><span className='countdown-number'>H</span> <span className='countdown-text'>32</span><span className='countdown-number'>M</span> <span className='countdown-text'>12</span><span className='countdown-number'>S</span></p> */}
+            <Timer />
           </div>
         </div>
 

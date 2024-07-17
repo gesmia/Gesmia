@@ -1,0 +1,36 @@
+.countdown-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-text span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    margin: auto;
+    transition: 0.2s;
+}
+
+.countdown-text span + span {
+    top: -100%;
+}
+
+.countdown-text span:first-of-type {
+    animation: newTime 0.2s forwards;
+}
+
+@keyframes newTime {
+    from {
+        translate: 0 100%;
+    }
+
+    to {
+        translate: 0 0;
+    }
+}
