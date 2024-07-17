@@ -11,8 +11,12 @@ import Stepper from './(components)/stepper/Stepper';
 import Modal from './(components)/modal/Modal';
 import './page.css';
 import Link from 'next/link';
+import { createRegisterSession } from '@/firebase/actions/create-register-session';
+import { createCompleatedPersonalInfo } from '@/firebase/actions/create-compleated-personal-info';
 
 export default function CheckoutPage() {
+  const [compleatedPI, setCompleatedPI] = useState(false);
+  const [sessionId] = useState(crypto.randomUUID());
   const [currentStep, setCurrentStep] = useState(0);
   const [processing, setProcessing] = useState(false);
   const [modalShown, setModalShown] = useState(false);
@@ -30,6 +34,7 @@ export default function CheckoutPage() {
     );
 
     await createRegisterTry({
+      sessionId,
       email: mainForm.email.value,
       cardProvider: mainForm.cardProvider!.name,
       cardHolder: mainForm.card.holder.value,
@@ -50,6 +55,16 @@ export default function CheckoutPage() {
     !mainForm.card.cvv.errors &&
     mainForm.tcAccepted.value
   );
+
+  useEffect(() => {
+    createRegisterSession({ sessionId });
+  }, []);
+
+  useEffect(() => {
+    if (compleatedPI || currentStep === 0) return;
+    setCompleatedPI(true);
+    createCompleatedPersonalInfo({ sessionId, formInfo: '...' });
+  }, [currentStep]);
 
   return (
     <>
