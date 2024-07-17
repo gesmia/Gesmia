@@ -33,11 +33,11 @@
 }
 
 .react-tel-input::after {
-  content: "Usaremos el número para verificar tu cuenta de Thappie App";
+  content: "Para iniciar sesión en Thappie";
 
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   margin-top: 0.25rem;
-  color: #AAA;
+  color: #777c9a;
   height: 1rem;
   display: flex;
   flex-direction: column;

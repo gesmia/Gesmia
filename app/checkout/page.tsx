@@ -64,10 +64,10 @@ export default function CheckoutPage() {
 
         <div className='checkout-count'>
           <div className='countdown-header'>
-            <h3>Oferta lanzamiento - $0.0 / Mensual</h3>
+            <h3>Oferta lanzamiento - <strong><u>$0.0</u></strong> / Mensual</h3>
           </div>
           <div className='countdown-timer'>
-            <p><span className='countdown-text'>1</span><span className='countdown-number'>D</span> <span className='countdown-text'>3</span><span className='countdown-number'>H</span> <span className='countdown-text'>32</span><span className='countdown-number'>M</span> <span className='countdown-text'>12</span><span className='countdown-number'>S</span></p>
+            <p className='ctt'><span className='countdown-text'>1</span><span className='countdown-number'>D</span> <span className='countdown-text'>3</span><span className='countdown-number'>H</span> <span className='countdown-text'>32</span><span className='countdown-number'>M</span> <span className='countdown-text'>12</span><span className='countdown-number'>S</span></p>
           </div>
         </div>
 
@@ -100,7 +100,7 @@ export default function CheckoutPage() {
                   )
                 },
                 {
-                  label: 'Datos de Pago',
+                  label: 'Datos de Facturación',
                   component: (
                     <>
                       <div className='step-form'>
@@ -126,7 +126,7 @@ export default function CheckoutPage() {
                         </label>
                       </div>
 
-                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <div className='btns' style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <button className='btn' onClick={() => setCurrentStep(0)}>
                           Atras
                         </button>

@@ -21,24 +21,26 @@ export default function PersonalForm({
     <>
 
       <h4 className='title-head'>
-        Gracias por tu interés en Thappie. Te garantizamos acceso exclusivo a los primeros 3 meses gratis una vez que la aplicación sea lanzada. ¡Te notificaremos cuando estemos listos para el lanzamiento! <u>No se te cobrará nada hoy.</u>
+        Te garantizamos acceso exclusivo a los primeros 3 meses gratis una vez que la aplicación sea lanzada. <br /> ¡Te notificaremos cuando estemos listos para el lanzamiento! <strong><u>No se te cobrará nada hoy.</u></strong>
       </h4>
 
       <br />
 
-      <Input
-        {...fullName}
-        label="Nombre"
-        id="Nombre Completo"
-        hints={
-          <>
-          <span>Nombre y Apellido</span>
-            {ErrorOn(fullName.value?.length > 0, fullName.errors)}
-          </>
-        }
-      />
-      <PhoneInput phone={phone} />
-      <EmailInput email={email} />
+      <div className="contact-det">
+        <Input
+          {...fullName}
+          label="Nombre"
+          id="Nombre Completo"
+          hints={
+            <>
+              <span>Nombre y Apellido</span>
+              {ErrorOn(fullName.value?.length > 0, fullName.errors)}
+            </>
+          }
+        />
+        <PhoneInput phone={phone} />
+        <EmailInput email={email} />
+      </div>
     </>
   );
 }
