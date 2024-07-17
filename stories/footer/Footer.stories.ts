@@ -12,7 +12,6 @@ const meta = {
     layout: 'fullscreen',
   },
   args: {
-    onLogin: fn(),
     onLogout: fn(),
     onCreateAccount: fn(),
   },

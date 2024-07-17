@@ -12,9 +12,6 @@ const meta = {
     layout: 'fullscreen',
   },
   args: {
-    onLogin: fn(),
-    onLogout: fn(),
-    onCreateAccount: fn(),
   },
 } satisfies Meta<typeof Header>;
 
@@ -23,9 +20,6 @@ type Story = StoryObj<typeof meta>;
 
 export const LoggedIn: Story = {
   args: {
-    user: {
-      name: 'Jane Doe',
-    },
   },
 };
 
