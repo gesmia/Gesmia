@@ -21,7 +21,7 @@ export default function PersonalForm({
     <>
 
       <h4 className='title-head'>
-        Te garantizamos acceso exclusivo a los primeros 3 meses gratis una vez que la aplicación sea lanzada. <br /> ¡Te notificaremos cuando estemos listos para el lanzamiento! <strong><u>No se te cobrará nada hoy.</u></strong>
+        Te garantizamos acceso exclusivo a los primeros 3 meses gratis una vez que la aplicación sea lanzada. <br /> ¡Te notificaremos cuando estemos listos para el lanzamiento! <strong>No se te cobrará nada hoy.</strong>
       </h4>
 
       <br />

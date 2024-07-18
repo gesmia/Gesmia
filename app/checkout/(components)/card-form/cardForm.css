@@ -4,7 +4,7 @@
 
 .checkout-card-row {
     display: flex;
-    gap: 1.5rem;
+    gap: 12px;
 }
 
 .input__control input {

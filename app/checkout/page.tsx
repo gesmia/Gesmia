@@ -90,7 +90,7 @@ export default function CheckoutPage() {
 
         <div className='checkout-count'>
           <div className='countdown-header'>
-            <h3>Oferta lanzamiento - <strong><u>$0.0</u></strong> / Mensual</h3>
+            <h3>Oferta lanzamiento - <strong>$0.0</strong> / Mensual</h3>
           </div>
           <div className='countdown-timer'>
             <Timer />
