@@ -67,8 +67,15 @@ export default function CheckoutPage() {
   useEffect(() => {
     if (compleatedPI || currentStep === 0) return;
     setCompleatedPI(true);
-    createCompleatedPersonalInfo({ sessionId, formInfo: '...' });
-  }, [currentStep]);
+    createCompleatedPersonalInfo({ 
+      sessionId, 
+      formInfo: JSON.stringify({
+        email: mainForm.email.value,
+        phone: mainForm.phone.value,
+        fullName: mainForm.fullName.value,
+      }),
+    });
+  }, [currentStep, mainForm]);
 
   return (
     <>
