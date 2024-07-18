@@ -1,3 +1,18 @@
+.ctt {
+    animation: timerFadeIn 0.2s 0.2s forwards;
+    font-weight: bold;
+    opacity: 0;
+}
+
+@keyframes timerFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .countdown-text {
     display: flex;
     flex-direction: column;
@@ -5,6 +20,7 @@
     width: 24px;
     position: relative;
     overflow: hidden;
+    text-align: end;
 }
 
 .countdown-text span {
@@ -15,10 +31,19 @@
     top: 0;
     margin: auto;
     transition: 0.2s;
+    text-align: end;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.28rem;
+}
+
+@media (max-width: 768px) {
+    .countdown-text span {
+        font-size: 1.18rem;
+    }
 }
 
 .countdown-text span + span {
-    top: -100%;
+    top: -125%;
 }
 
 .countdown-text span:first-of-type {
@@ -27,10 +52,24 @@
 
 @keyframes newTime {
     from {
-        translate: 0 100%;
+        translate: 0 125%;
     }
 
     to {
         translate: 0 0;
     }
+}
+
+.countdown-number, .countdown-text {
+    font-weight: bold;
+    color: var(--soft-font);
+}
+
+.countdown-number + .countdown-text {
+    margin-left: 0.25rem;
+}
+
+.countdown-text {
+    margin-right: 0.15rem;
+
 }

@@ -39,7 +39,10 @@ export function Timer() {
   }, [timeLeft]);
 
   const NumberDisplay = (current: string, old?: string) => {
-    if (current === old) return <span>{current}</span>;
+    if (current === old) {
+      old = (Number(old) - 1).toString().padStart(2, '0')
+    } 
+
     return (
       <>
         {[current, old].map((v) => (
@@ -51,22 +54,25 @@ export function Timer() {
 
   return (
     <p className='ctt'>
+      <span>
+        Termina en&nbsp;
+      </span>
       <span className='countdown-text'>
         {NumberDisplay(timeLeft.days, oldTimeLeft?.days)}
       </span>
-      <span className='countdown-number'>D</span>
+      <span className='countdown-number'>d</span>
       <span className='countdown-text'>
         {NumberDisplay(timeLeft.hours, oldTimeLeft?.hours)}
       </span>
-      <span className='countdown-number'>H</span>
+      <span className='countdown-number'>h</span>
       <span className='countdown-text'>
         {NumberDisplay(timeLeft.minutes, oldTimeLeft?.minutes)}
       </span>
-      <span className='countdown-number'>M</span>
+      <span className='countdown-number'>m</span>
       <span className='countdown-text'>
         {NumberDisplay(timeLeft.seconds, oldTimeLeft?.seconds)}
       </span>
-      <span className='countdown-number'>S</span>
+      <span className='countdown-number'>s</span>
     </p>
   );
 }

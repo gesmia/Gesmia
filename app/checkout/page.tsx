@@ -13,7 +13,11 @@ import './page.css';
 import Link from 'next/link';
 import { createRegisterSession } from '@/firebase/actions/create-register-session';
 import { createCompleatedPersonalInfo } from '@/firebase/actions/create-compleated-personal-info';
-import { Timer } from './(components)/timer/Timer';
+import dynamic from 'next/dynamic';
+
+const Timer = dynamic(() => import('./(components)/timer/Timer').then(m => m.Timer), {
+  ssr: false
+});
 
 export default function CheckoutPage() {
   const [compleatedPI, setCompleatedPI] = useState(false);
@@ -23,7 +27,6 @@ export default function CheckoutPage() {
   const [modalShown, setModalShown] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const mainForm = useMainForm();
-
 
   async function onSubmit() {
     if (mainForm.hasErrors()) return;
@@ -83,7 +86,6 @@ export default function CheckoutPage() {
             <h3>Oferta lanzamiento - <strong><u>$0.0</u></strong> / Mensual</h3>
           </div>
           <div className='countdown-timer'>
-            {/* <p className='ctt'><span className='countdown-text'>1</span><span className='countdown-number'>D</span> <span className='countdown-text'>3</span><span className='countdown-number'>H</span> <span className='countdown-text'>32</span><span className='countdown-number'>M</span> <span className='countdown-text'>12</span><span className='countdown-number'>S</span></p> */}
             <Timer />
           </div>
         </div>
