@@ -1,0 +1,54 @@
+/* page.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.terms, .privacy {
+  margin-bottom: 40px;
+}
+
+.terms h2, .privacy h2 {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.terms p, .privacy p {
+  font-size: 1em;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.terms a, .privacy a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.terms a:hover, .privacy a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .terms h2, .privacy h2 {
+    font-size: 1.2em;
+  }
+
+  .terms p, .privacy p {
+    font-size: 0.9em;
+  }
+}

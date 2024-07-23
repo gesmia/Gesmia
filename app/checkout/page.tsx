@@ -74,9 +74,7 @@ export default function CheckoutPage() {
         shown={modalShown}
       />
       <Header hideWaitingList />
-
       <div className='container'>
-
         <div className='checkout-count'>
           <div className='countdown-header'>
             <h3>Oferta lanzamiento - <strong><u>$0.0</u></strong> / Mensual</h3>
@@ -135,7 +133,7 @@ export default function CheckoutPage() {
                             )}
                           />
                           Acepto los
-                          <Link href="#">
+                          <Link href="/terms">
                             Terminos y Condiciones.
                           </Link>
                         </label>
