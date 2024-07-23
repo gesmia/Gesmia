@@ -125,7 +125,8 @@ label[for='termsAndConditions'] {
 .countdown-timer p {
   margin: 0;
   display: flex;
-  gap: 5px;
+  /* gap: 5px; */
+  font-family: 'Roboto Mono', monospace;
 }
 
 .countdown-text {
