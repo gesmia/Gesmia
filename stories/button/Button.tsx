@@ -38,7 +38,7 @@ export const Button = ({
   const mode = primary ? 'button--primary' : 'button--secondary';
   return (
     <Link
-      href={'https://airtable.com/appFPGgY8oLmFyDL1/pagLojfGYRMV4hHM9/form'} 
+      href={'/checkout'} 
       type="button"
       className={['button', `button--${size}`, mode].join(' ')}
       {...props}    >
