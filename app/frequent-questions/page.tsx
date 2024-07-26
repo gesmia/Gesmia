@@ -8,7 +8,7 @@ export default function CheckoutPage() {
     <>
       <Header hideWaitingList />
 
-      <div className='container'>
+      <div className='info-container'>
         <h1>Preguntas Frecuentes</h1>
         <div className='faq'>
           <h2>¿Qué es Thappie?</h2>
