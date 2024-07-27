@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import './timer.css'
 
-const DEADLINE = new Date(Date.UTC(2024, 7, 4, 6, 0, 0, 0));
+const DEADLINE = new Date(Date.UTC(2024, 7, 5, 6, 0, 0, 0));
 
 function calculateTimeLeft(): Record<'days' | 'hours' | 'minutes' | 'seconds', string> {
   const difference = +DEADLINE - +new Date();
