@@ -145,7 +145,7 @@ export default function Home() {
           </div> */}
 
           <div className="device_image">
-            <Image src={tapp_device} alt={"pattern decoration wallpaper"} className="step-image" />
+            <Image width={300} src={tapp_device} alt={"pattern decoration wallpaper"} className="step-image" />
           </div>
         </section>
 
