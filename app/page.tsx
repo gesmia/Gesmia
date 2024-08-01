@@ -79,7 +79,7 @@ export default function Home() {
           <p className="subtitle">Conecta en tiempo real con tu familia, asegura su ubicación y acciona <br /> alertas
             de emergencia con un click.</p>
 
-          <Button size="large" label="Unirme a la lista de espera" />
+          <Button size="large" label="Unirme a la preventa" />
 
           <div className="content">
             <div className="app">
@@ -104,7 +104,7 @@ export default function Home() {
         {/* steps */}
         <section className="steps">
           <h2>3 pasos para mantener <br />tu familia más segura</h2>
-          <p>Pero antes debes entrar a nuestra lista de espera</p>
+          <p>Pero antes debes entrar a nuestra como usuario</p>
           <div>
             <div className="steps-lines">
               <span className="step-line" id="line1">

@@ -8,7 +8,7 @@ export default function CheckoutPage() {
     <>
       <Header hideWaitingList />
 
-      <div className='container'>
+      <div className='info-container'>
         <h1>Términos y Condiciones</h1>
         <div className='terms'>
           <h2>1. Aceptación de los Términos</h2>

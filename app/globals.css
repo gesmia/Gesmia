@@ -16,3 +16,7 @@
   --border-divider-color: #EFEFEF; /* Color used for borders in the interface */
   --background-color: #FFFFFF; /* Main background color used in the interface */
 }
+
+html {
+  overflow-y: scroll;
+}

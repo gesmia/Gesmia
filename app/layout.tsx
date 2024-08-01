@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import "./globals.css";
 
@@ -9,6 +10,10 @@ export const metadata: Metadata = {
   title: "Thappie",
   description: "Una app de seguridad personal",
 };
+
+const HotjarLoader = dynamic(() => import('./hotjar-loader'), {
+  ssr: false
+});
 
 export default function RootLayout({
   children,
@@ -23,6 +28,7 @@ export default function RootLayout({
       </Head>
       <body className={inter.className}>
         {children}
+        <HotjarLoader />
       </body>
     </html>
   );
