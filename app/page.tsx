@@ -104,7 +104,7 @@ export default function Home() {
         {/* steps */}
         <section className="steps">
           <h2>3 pasos para mantener <br />tu familia más segura</h2>
-          <p>Pero antes debes entrar a nuestra como usuario</p>
+          <p>Pero antes debes unirte a la pre venta</p>
           <div>
             <div className="steps-lines">
               <span className="step-line" id="line1">

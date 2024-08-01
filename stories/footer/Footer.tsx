@@ -8,7 +8,7 @@ export const Footer = () => (
   <footer>
     <div className="footer">
       <div className='by'>
-        <label> Hecho en Argentina y Costa Rica - <Link className='contact' href={'mailto:leandro@thappie.com'} > Contacto </Link> </label>
+        <label> Hecho en Costa Rica - <Link className='contact' href={'mailto:matthew@thappie.com'} > Contacto </Link> </label>
       </div>
       <div>
         <>
