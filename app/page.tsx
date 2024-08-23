@@ -18,7 +18,7 @@ import imageM_step_one from '@/public/steps/IMG1m.svg'
 import imageM_step_two from '@/public/steps/IMG2m.svg'
 import imageM_step_three from '@/public/steps/IMG3m.svg'
 
-import tapp_device from '@/public/device/thapp.png'
+import tapp_device from '@/public/device/device_gesmia.png'
 import tappCollar from '@/public/head/tapp_collar.jpg'
 
 import { InformationWithContent } from '@/stories/informationWithContent/InformationWithContent'
