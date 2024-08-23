@@ -7,7 +7,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Gesmie",
+  title: "Gesmia App",
   description: "Una app de seguridad personal",
 };
 
