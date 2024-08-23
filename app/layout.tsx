@@ -7,7 +7,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Thappie",
+  title: "Gesmie",
   description: "Una app de seguridad personal",
 };
 
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <title>Thappie</title>
+        <title>Gesmia</title>
         <meta name="description" content="Una app de seguridad personal" />
       </Head>
       <body className={inter.className}>

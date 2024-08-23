@@ -151,11 +151,11 @@ export default function Home() {
 
         {/* image and descriptions */}
         <section className="imageAndContent">
-          <InformationWithContent type={1} title={"Todo tu circulo siempre presente"} description={"No importa si eres un viajero, los usuarios de Thappie siempre pueden reportar incidentes, ayudandonos a mantener a tu familia segura. Notificando en cada lugar donde están tus familiares o amigos"} label={"Unirme"}>
+          <InformationWithContent type={1} title={"Todo tu circulo siempre presente"} description={"No importa si eres un viajero, los usuarios de Gesmia siempre pueden reportar incidentes, ayudandonos a mantener a tu familia segura. Notificando en cada lugar donde están tus familiares o amigos"} label={"Unirme"}>
             <Image src={incident_view} alt={"location view mobile app"} className="function" />
           </InformationWithContent>
 
-          <InformationWithContent type={2} title={"Comentarios de personas que usan Thappie"} description={"Explora el entusiasmo y las expectativas de futuros usuarios que están listos para adoptar Thappie como su solución de seguridad personal, destacando su potencial para mejorar la tranquilidad y la seguridad diaria."} label={"Unirme"}>
+          <InformationWithContent type={2} title={"Comentarios de personas que usan Gesmia"} description={"Explora el entusiasmo y las expectativas de futuros usuarios que están listos para adoptar Gesmia como su solución de seguridad personal, destacando su potencial para mejorar la tranquilidad y la seguridad diaria."} label={"Unirme"}>
             <div className="comments-animation">
               <div className="comments-animation-inner">
                 {comments.map(comment => (
@@ -173,7 +173,7 @@ export default function Home() {
         {/* prices */}
         <section className="pricesBox">
           <h4>Rediseña tu sentido de seguridad</h4>
-          <label className="subtitle">Descubre cómo Thappie puede hacer que tú y tus seres queridos vivan más tranquilos.</label>
+          <label className="subtitle">Descubre cómo Gesmia puede hacer que tú y tus seres queridos vivan más tranquilos.</label>
 
           <div className="prices">
 

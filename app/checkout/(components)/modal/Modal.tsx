@@ -39,10 +39,10 @@ export default function Modal({ shown, processing, setShown }: Props) {
         : (
           <>
             <h2 className="modal__title">
-             Tu cueta de thappie está reservada
+             Tu cueta de Gesmia está reservada
             </h2>
             <div className="modal__text">
-              Tu cuenta de Thappie ha sido creada, pronto se te notificará cuando Thappie sea lanzado. No se te cobrará antes sin ser notificado.
+              Tu cuenta de Gesmia ha sido creada, pronto se te notificará cuando Gesmia sea lanzado. No se te cobrará antes sin ser notificado.
             </div>
             <div style={{ textAlign: 'end' }}>
               <button className="btn btn--primary" onClick={() => setShown?.(false)}>

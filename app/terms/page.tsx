@@ -13,17 +13,17 @@ export default function CheckoutPage() {
         <div className='terms'>
           <h2>1. Aceptación de los Términos</h2>
           <p>
-            Al acceder y utilizar la aplicación Thappie, usted acepta y está de acuerdo con estos Términos y Condiciones. Si no está de acuerdo con estos términos, no debe utilizar la aplicación.
+            Al acceder y utilizar la aplicación Gesmia, usted acepta y está de acuerdo con estos Términos y Condiciones. Si no está de acuerdo con estos términos, no debe utilizar la aplicación.
           </p>
 
           <h2>2. Uso de la Aplicación</h2>
           <p>
-            Thappie se proporciona para su uso personal y no comercial. No debe utilizar la aplicación para ningún propósito ilegal o no autorizado.
+            Gesmia se proporciona para su uso personal y no comercial. No debe utilizar la aplicación para ningún propósito ilegal o no autorizado.
           </p>
 
           <h2>3. Registro y Seguridad de la Cuenta</h2>
           <p>
-            Usted es responsable de mantener la confidencialidad de su información de inicio de sesión y de cualquier actividad que ocurra bajo su cuenta. Notifique inmediatamente a Thappie de cualquier uso no autorizado de su cuenta.
+            Usted es responsable de mantener la confidencialidad de su información de inicio de sesión y de cualquier actividad que ocurra bajo su cuenta. Notifique inmediatamente a Gesmia de cualquier uso no autorizado de su cuenta.
           </p>
 
           <h2>4. Privacidad</h2>
@@ -33,22 +33,22 @@ export default function CheckoutPage() {
 
           <h2>5. Propiedad Intelectual</h2>
           <p>
-            Todo el contenido, marcas comerciales, logotipos y datos de Thappie son propiedad de sus respectivos propietarios. No se otorga ningún derecho o licencia para usar cualquiera de estas marcas sin el permiso previo por escrito del propietario.
+            Todo el contenido, marcas comerciales, logotipos y datos de Gesmia son propiedad de sus respectivos propietarios. No se otorga ningún derecho o licencia para usar cualquiera de estas marcas sin el permiso previo por escrito del propietario.
           </p>
 
           <h2>6. Limitación de Responsabilidad</h2>
           <p>
-            Thappie no será responsable por cualquier daño directo, indirecto, incidental, especial o consecuente que resulte del uso o la imposibilidad de usar la aplicación.
+            Gesmia no será responsable por cualquier daño directo, indirecto, incidental, especial o consecuente que resulte del uso o la imposibilidad de usar la aplicación.
           </p>
 
           <h2>7. Modificaciones a los Términos</h2>
           <p>
-            Thappie se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones serán efectivas inmediatamente después de su publicación en la aplicación.
+            Gesmia se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones serán efectivas inmediatamente después de su publicación en la aplicación.
           </p>
 
           <h2>8. Terminación</h2>
           <p>
-            Thappie puede suspender o terminar su acceso a la aplicación en cualquier momento, sin previo aviso, por cualquier razón, incluyendo pero no limitado a una violación de estos Términos y Condiciones.
+            Gesmia puede suspender o terminar su acceso a la aplicación en cualquier momento, sin previo aviso, por cualquier razón, incluyendo pero no limitado a una violación de estos Términos y Condiciones.
           </p>
 
           <h2>9. Ley Aplicable</h2>
@@ -58,7 +58,7 @@ export default function CheckoutPage() {
 
           <h2>10. Contacto</h2>
           <p>
-            Si tiene alguna pregunta sobre estos Términos y Condiciones, por favor contáctenos a través de la sección de ayuda en la aplicación o enviando un correo electrónico a <a href="mailto:soporte@thappie.com">soporte@thappie.com</a>.
+            Si tiene alguna pregunta sobre estos Términos y Condiciones, por favor contáctenos a través de la sección de ayuda en la aplicación o enviando un correo electrónico a <a href="mailto:soporte@Gesmia.com">soporte@Gesmia.com</a>.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function CheckoutPage() {
 
           <h2>5. Sus Derechos</h2>
           <p>
-            Usted tiene el derecho de acceder, corregir o eliminar su información personal. Puede ejercer estos derechos contactándonos en <a href="mailto:soporte@thappie.com">soporte@thappie.com</a>.
+            Usted tiene el derecho de acceder, corregir o eliminar su información personal. Puede ejercer estos derechos contactándonos en <a href="mailto:soporte@Gesmia.com">soporte@Gesmia.com</a>.
           </p>
 
           <h2>6. Cambios a esta Política</h2>
@@ -96,7 +96,7 @@ export default function CheckoutPage() {
 
           <h2>7. Contacto</h2>
           <p>
-            Si tiene alguna pregunta sobre esta Política de Privacidad, por favor contáctenos a través de la sección de ayuda en la aplicación o enviando un correo electrónico a <a href="mailto:soporte@thappie.com">soporte@thappie.com</a>.
+            Si tiene alguna pregunta sobre esta Política de Privacidad, por favor contáctenos a través de la sección de ayuda en la aplicación o enviando un correo electrónico a <a href="mailto:soporte@Gesmia.com">soporte@Gesmia.com</a>.
           </p>
         </div>
       </div>
